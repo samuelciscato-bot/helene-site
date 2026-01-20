@@ -4,78 +4,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Confidentialité | Hélène Nguyen</title>
-  <meta name="robots" content="noindex,follow" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://helene-nguyen-psychologue.fr/confidentialite.html" />
+  <link rel="icon" href="assets/icons/coeur-calme.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="container">
-    <header classglen  class="card">
-      <span class="badge">Données et confidentialité</span>
-      <h1 style="margin-top:10px;">Politique de confidentialité</h1>
-      <p class="smallNote">Dernière mise à jour : à compléter</p>
-    </header>
+  <header class="header">
+    <div class="wrap header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__name">Hélène Nguyen</span>
+        <span class="brand__tag">Psychologue clinicienne, Paris</span>
+      </a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html#rdv" class="nav__cta">Prendre rendez-vous</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Données collectées via ce site</h2>
-      <p>
-        Ce site est un site vitrine. Il ne vous demande pas de renseigner d’informations médicales.
-      </p>
-      <ul class="doodle is-pastel">
-        <li>Si vous envoyez un email, votre adresse email et le contenu de votre message seront reçus par Hélène Nguyen.</li>
-        <li>Si vous prenez rendez-vous via une plateforme tierce, les informations nécessaires à la réservation peuvent être traitées par cette plateforme (nom, email, créneau, et tout champ que vous saisissez).</li>
-      </ul>
-    </section>
+  <main class="section">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Confidentialité</h2>
+        <p class="sublead">Comment les informations sont traitées sur ce site.</p>
+      </div>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Prise de rendez-vous via un service tiers</h2>
-      <p>
-        La prise de rendez-vous peut être gérée via un service externe (par exemple Calendly, Cal.com, Google).
-        Dans ce cas, la plateforme applique sa propre politique de confidentialité.
-      </p>
-      <p class="smallNote">
-        Conseil pratique : si vous changez d’outil, mets à jour cette page en remplaçant simplement le nom du service.
-      </p>
-    </section>
+      <div class="card">
+        <h3>1. Données transmises via le formulaire de contact</h3>
+        <p>
+          Si vous utilisez le formulaire, vous pouvez transmettre : nom (facultatif), email, message.
+          Ces informations servent uniquement à répondre à votre demande.
+        </p>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Cookies et mesures d’audience</h2>
-      <p>
-        Ce site n’installe pas volontairement de cookies de suivi publicitaire.
-        Certaines fonctionnalités intégrées (par exemple un widget de rendez-vous) peuvent toutefois déposer des traceurs selon le service utilisé.
-      </p>
-    </section>
+        <h3>2. Prise de rendez-vous</h3>
+        <p>
+          La prise de rendez-vous se fait via un lien externe (par exemple un outil de réservation).
+          Les informations collectées et leur durée de conservation dépendent de l’outil utilisé.
+        </p>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Durées de conservation</h2>
-      <ul class="doodle is-pastel">
-        <li>Emails : conservés le temps nécessaire au suivi de votre demande, puis archivés ou supprimés selon le besoin.</li>
-        <li>Rendez-vous : conservation selon les règles de la plateforme de réservation choisie.</li>
-      </ul>
-    </section>
+        <h3>3. Cookies et mesures d’audience</h3>
+        <p>
+          Ce site peut fonctionner sans cookies. Si un outil d’audience est ajouté plus tard, cette page sera mise à jour.
+        </p>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Vos droits</h2>
-      <p>
-        Vous pouvez demander l’accès, la rectification ou la suppression des données vous concernant,
-        en écrivant à : <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
-      </p>
-    </section>
+        <h3>4. Contact</h3>
+        <p>
+          Pour toute question relative à la confidentialité, écrivez à :
+          <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
+        </p>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Sécurité</h2>
-      <p>
-        Le site est accessible en HTTPS lorsque le domaine est correctement configuré.
-        Pour les échanges, privilégiez l’email uniquement pour des informations pratiques.
-      </p>
-    </section>
+        <p class="muted">
+          Conseil pratique : si tu ajoutes Google Analytics, Meta Pixel ou autre, il faudra mettre à jour cette page.
+        </p>
+      </div>
+    </div>
+  </main>
 
-    <footer class="siteFooter">
-      <p class="footerLinks">
-        <a href="index.html">Retour au site</a>
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Hélène Nguyen</p>
+      <p class="footer__links">
+        <a href="index.html">Accueil</a>
         <span class="sep">|</span>
         <a href="mentions-legales.html">Mentions légales</a>
       </p>
-    </footer>
-  </main>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
