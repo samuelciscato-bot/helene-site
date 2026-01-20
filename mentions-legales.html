@@ -4,76 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentions légales | Hélène Nguyen</title>
-  <meta name="robots" content="noindex,follow" />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://helene-nguyen-psychologue.fr/mentions-legales.html" />
+  <link rel="icon" href="assets/icons/coeur-calme.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="container">
-    <header class="card">
-      <span class="badge">Informations légales</span>
-      <h1 style="margin-top:10px;">Mentions légales</h1>
-      <p class="smallNote">
-        Dernière mise à jour : à compléter
-      </p>
-    </header>
+  <header class="header">
+    <div class="wrap header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__name">Hélène Nguyen</span>
+        <span class="brand__tag">Psychologue clinicienne, Paris</span>
+      </a>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html#rdv" class="nav__cta">Prendre rendez-vous</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Éditeur du site</h2>
-      <ul class="doodle is-pastel">
-        <li>Nom : Hélène Nguyen</li>
-        <li>Profession : Psychologue clinicienne</li>
-        <li>Adresse professionnelle : à compléter</li>
-        <li>Email : <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a></li>
-        <li>Téléphone : à compléter</li>
-        <li>SIRET : à compléter</li>
-        <li>Numéro d’enregistrement (si applicable) : à compléter</li>
-      </ul>
-    </section>
+  <main class="section">
+    <div class="wrap">
+      <div class="section__head">
+        <h2>Mentions légales</h2>
+        <p class="sublead">Informations légales du site.</p>
+      </div>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Hébergement</h2>
-      <p>
-        Ce site est hébergé par Netlify (hébergement statique).
-      </p>
-      <ul class="doodle is-pastel">
-        <li>Netlify, Inc.</li>
-        <li>Adresse : 2325 3rd Street, Suite 215, San Francisco, CA 94107, USA</li>
-      </ul>
-      <p class="smallNote">
-        Remarque : si tu changes d’hébergeur (OVH, o2switch, etc.), remplace simplement ce bloc.
-      </p>
-    </section>
+      <div class="card">
+        <h3>Éditeur du site</h3>
+        <p>
+          <strong>Hélène Nguyen</strong><br />
+          Psychologue clinicienne<br />
+          Paris, France<br />
+          Email : <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
+        </p>
+        <p class="muted">
+          À compléter si nécessaire : adresse professionnelle complète, numéro SIRET, numéro ADELI ou RPPS si applicable.
+        </p>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Propriété intellectuelle</h2>
-      <p>
-        Sauf mention contraire, les contenus de ce site (textes, éléments graphiques, mise en page, logos, icônes)
-        sont protégés. Toute reproduction, modification ou diffusion sans autorisation est interdite.
-      </p>
-    </section>
+        <h3>Hébergement</h3>
+        <p>
+          Site hébergé par <strong>Netlify</strong> (Netlify, Inc.).<br />
+          Le site est publié via une infrastructure de type “static hosting”.
+        </p>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Liens externes</h2>
-      <p>
-        Ce site peut proposer des liens vers des services tiers (par exemple une plateforme de prise de rendez-vous).
-        L’éditeur n’est pas responsable du contenu de ces sites externes.
-      </p>
-    </section>
+        <h3>Propriété intellectuelle</h3>
+        <p>
+          Les textes, éléments graphiques et contenus de ce site sont protégés par le droit d’auteur.
+          Toute reproduction non autorisée est interdite.
+        </p>
 
-    <section class="card" style="margin-top:14px;">
-      <h2>Contact</h2>
-      <p>
-        Pour toute question relative au site : <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
-      </p>
-    </section>
+        <h3>Contact</h3>
+        <p>
+          Pour toute question, vous pouvez écrire à :
+          <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
+        </p>
+      </div>
+    </div>
+  </main>
 
-    <footer class="siteFooter">
-      <p class="footerLinks">
-        <a href="index.html">Retour au site</a>
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>© <span id="year"></span> Hélène Nguyen</p>
+      <p class="footer__links">
+        <a href="index.html">Accueil</a>
         <span class="sep">|</span>
         <a href="confidentialite.html">Confidentialité</a>
       </p>
-    </footer>
-  </main>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
