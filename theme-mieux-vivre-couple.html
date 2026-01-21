@@ -183,11 +183,26 @@
 
     const btn = document.querySelector(".navToggle");
     const nav = document.querySelector(".nav");
+    const dropdown = document.querySelector(".nav__item--dropdown");
+    const dropdownLink = dropdown ? dropdown.querySelector(".nav__link") : null;
+
     btn.addEventListener("click", () => {
       const open = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("nav--open");
+      if (open && dropdown) {
+        dropdown.classList.remove("nav__item--open");
+      }
     });
+
+    if (dropdownLink) {
+      dropdownLink.addEventListener("click", (e) => {
+        if (window.matchMedia("(max-width: 860px)").matches) {
+          e.preventDefault();
+          dropdown.classList.toggle("nav__item--open");
+        }
+      });
+    }
 
     const els = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {

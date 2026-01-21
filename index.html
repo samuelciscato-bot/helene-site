@@ -102,7 +102,7 @@
           <p class="kicker">Accompagnement du mal-être au travail</p>
           <h1>Retrouver de l’air, du sens, et une marge de manoeuvre.</h1>
           <p class="lead">
-            J’accompagne les personnes qui traversent un mal-être au travail : stressss, surcharge, burn-out,
+            J’accompagne les personnes qui traversent un mal-être au travail : stress, surcharge, burn-out,
             conflits, perte de sens, difficultés relationnelles.
           </p>
 
@@ -449,11 +449,26 @@ Prendre rendez-vous</a>
     // Menu mobile
     const btn = document.querySelector(".navToggle");
     const nav = document.querySelector(".nav");
+    const dropdown = document.querySelector(".nav__item--dropdown");
+    const dropdownLink = dropdown ? dropdown.querySelector(".nav__link") : null;
+
     btn.addEventListener("click", () => {
       const open = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("nav--open");
+      if (open && dropdown) {
+        dropdown.classList.remove("nav__item--open");
+      }
     });
+
+    if (dropdownLink) {
+      dropdownLink.addEventListener("click", (e) => {
+        if (window.matchMedia("(max-width: 860px)").matches) {
+          e.preventDefault();
+          dropdown.classList.toggle("nav__item--open");
+        }
+      });
+    }
 
     // Reveal on scroll
     const els = document.querySelectorAll(".reveal");

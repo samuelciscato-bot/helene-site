@@ -778,9 +778,10 @@ a:hover{ opacity: 0.92; }
     border: none;
     box-shadow: none;
     padding: 0 0 8px;
-    display: flex;
+    display: none;
     background: transparent;
   }
+  .nav__item--open .nav__dropdown{ display: flex; }
   .nav__dropdown a{ text-align: center; }
   .parallax{ background-attachment: scroll; }
 }
