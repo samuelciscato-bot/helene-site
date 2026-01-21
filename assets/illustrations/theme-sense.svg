@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration theme perte de sens">
+  <rect width="800" height="600" fill="#fbfaf7"/>
+  <path d="M90 130 C220 40, 420 60, 520 150 C600 220, 700 260, 740 360 C620 330, 520 360, 420 470 C300 560, 150 520, 90 430 Z" fill="#6a7db0"/>
+  <path d="M160 170 C260 110, 360 120, 440 190 C500 240, 560 260, 640 330 C560 320, 500 340, 420 400 C320 480, 220 450, 160 380 Z" fill="#f0a7a0"/>
+  <path d="M260 220 C330 190, 410 210, 460 250 C500 290, 520 300, 570 350 C500 350, 460 370, 410 400 C340 440, 280 410, 260 360 Z" fill="#f2c96b"/>
+  <circle cx="590" cy="150" r="26" fill="#2c2a27" opacity="0.15"/>
+</svg>

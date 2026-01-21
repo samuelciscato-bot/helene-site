@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration theme couple">
+<g transform="translate(800 0) scale(-1 1)">
+  <rect width="800" height="600" fill="#fbfaf7"/>
+  <path d="M120 360 C200 260, 340 220, 460 240 C560 260, 640 320, 680 420" fill="none" stroke="#3a3a38" stroke-width="4" stroke-linecap="round"/>
+  <path d="M160 420 C240 330, 360 300, 460 320 C540 340, 600 380, 640 450" fill="none" stroke="#3a3a38" stroke-width="3" stroke-linecap="round"/>
+  <ellipse cx="260" cy="250" rx="80" ry="60" fill="#a9c4bc"/>
+  <ellipse cx="520" cy="290" rx="90" ry="70" fill="#a9c4bc"/>
+  <path d="M260 250 L360 300 L220 330 Z" fill="#f2c96b"/>
+  <path d="M520 290 L600 260 L610 340 Z" fill="#f2c96b"/>
+  <circle cx="400" cy="210" r="16" fill="#3a3a38" opacity="0.2"/>
+</g>
+</svg>

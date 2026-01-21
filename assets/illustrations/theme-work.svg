@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration theme souffrance au travail">
+  <rect width="800" height="600" fill="#fbfaf7"/>
+  <path d="M110 120 L310 80 L430 170 L260 250 Z" fill="#e7859f"/>
+  <path d="M420 90 L680 160 L560 310 L360 260 Z" fill="#6b8f86"/>
+  <path d="M140 300 L360 280 L520 420 L200 470 Z" fill="#f2c3b2"/>
+  <path d="M470 330 L720 360 L640 520 L430 500 Z" fill="#f0c96b"/>
+  <circle cx="230" cy="190" r="28" fill="#2c2a27" opacity="0.25"/>
+  <circle cx="520" cy="210" r="22" fill="#2c2a27" opacity="0.2"/>
+  <circle cx="330" cy="410" r="20" fill="#2c2a27" opacity="0.18"/>
+</svg>
