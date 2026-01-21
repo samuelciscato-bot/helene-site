@@ -95,6 +95,21 @@ a:hover{ opacity: 0.92; }
 .nav a:hover{ background: rgba(0,0,0,0.04); }
 .nav__item{ position: relative; }
 .nav__link{ display:inline-flex; }
+.nav__chevron{
+  display:inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 180ms ease;
+}
+.nav__item--dropdown:hover .nav__chevron,
+.nav__item--dropdown:focus-within .nav__chevron,
+.nav__item--open .nav__chevron{
+  transform: rotate(225deg);
+}
 .nav__dropdown{
   position: absolute;
   top: 100%;
