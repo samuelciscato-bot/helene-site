@@ -94,14 +94,18 @@ a:hover{ opacity: 0.92; }
 }
 .nav a:hover{ background: rgba(0,0,0,0.04); }
 .nav__item{ position: relative; }
-.nav__link{ display:inline-flex; }
+.nav__link{
+  display:inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 .nav__chevron{
   display:inline-block;
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   margin-left: 6px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
   transform: rotate(45deg);
   transition: transform 180ms ease;
 }
@@ -145,7 +149,10 @@ a:hover{ opacity: 0.92; }
 }
 .nav__cta{
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: var(--text);
+  color: var(--paper);
+  box-shadow: 0 10px 20px rgba(20,18,16,0.12);
+  font-weight: 600;
 }
 
 .navToggle{
@@ -785,6 +792,14 @@ a:hover{ opacity: 0.92; }
     align-items: stretch;
   }
   .nav a{ text-align:center; }
+  .nav__link{
+    width: 100%;
+    justify-content: center;
+  }
+  .nav__chevron{
+    margin-left: 8px;
+    transform: translateY(1px) rotate(45deg);
+  }
   .nav.nav--open{ display:flex; }
   .nav__item{ width: 100%; }
   .nav__dropdown{
