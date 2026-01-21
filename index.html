@@ -19,6 +19,9 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ec68d888794047df802be76392c2776e"}'></script>
+  <!-- End Cloudflare Web Analytics -->
 
   <!-- Open Graph -->
   <meta property="og:title" content="Hélène Nguyen | Psychologue clinicienne à Paris" />
@@ -79,6 +82,8 @@
         <a
   href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
   class="nav__cta"
+  target="_blank"
+  rel="noopener"
 >Prendre rendez-vous</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -105,7 +110,9 @@
           <div class="hero__actions">
           <a
   class="btn btn--primary btn--irise"
-  href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris">
+  href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
+  target="_blank"
+  rel="noopener">
 Prendre rendez-vous</a>
             <a class="btn btn--ghost" href="#contact">Me contacter</a>
           </div>
@@ -146,10 +153,14 @@ Prendre rendez-vous</a>
       </div>
     </section>
 
-    <section class="section section--split" id="approche">
-      <div class="wrap split">
-        <div class="split__text reveal">
+    <section class="section section--divider" id="approche">
+      <div class="wrap">
+        <div class="section__head reveal">
           <h2>Mon approche</h2>
+        </div>
+
+        <div class="split">
+        <div class="split__text reveal">
           <p class="sublead">
             Mon approche, fondée sur l'écoute bienveillante de ce qui pèse ou fait souffrir ainsi que sur la co-construction de sens, vise à apaiser, à retrouver des appuis, et à améliorer le bien-être au quotidien.
           </p>
@@ -189,6 +200,7 @@ Prendre rendez-vous</a>
             alt="Allée menant au cabinet"
             loading="lazy"
           />
+        </div>
         </div>
       </div>
       <div class="wrap">
@@ -297,39 +309,41 @@ Prendre rendez-vous</a>
       <div class="wrap">
         <div class="section__head reveal">
           <h2>Modalités</h2>
-          <p class="sublead">Simple, lisible, sans surprise.</p>
+          <p class="sublead">Pour savoir où et comment se dérouleront vos séances.</p>
         </div>
 
         <div class="grid3">
-          <article class="infoCard infoCard--tight reveal">
+          <article class="infoCard reveal">
             <img src="assets/icons/localisation.svg" alt="" />
             <h3>Cabinet</h3>
             <p>(sur rendez-vous)</p>
             <p><strong>133 rue de Sèvres, 75006 Paris</strong></p>
-            <p><span class="infoTag">M</span> Duroc (lignes 10 et 13)</p>
-            <p><span class="infoTag">M</span> Vaneau (ligne 10)</p>
-            <p><span class="infoTag">M</span> Montparnasse-Bienvenüe (lignes 4, 6, 12 et 13)</p>
+            <p><span class="infoTag">Métro</span> Duroc (lignes 10 et 13)</p>
+            <p><span class="infoTag">Métro</span> Vaneau (ligne 10)</p>
+            <p><span class="infoTag">Métro</span> Montparnasse-Bienvenüe (lignes 4, 6, 12 et 13)</p>
             <p><span class="infoTag">Gare</span> Montparnasse</p>
             <p><span class="infoTag">Bus</span> Duroc (lignes 82 et 92)</p>
-            <p><span class="infoTag">P</span> 5 impasse de l'Enfant Jésus, Paris</p>
-            <p><span class="infoTag">RATP</span> <a href="https://www.ratp.fr/itineraires?to=133%20rue%20de%20S%C3%A8vres%2075006%20Paris" target="_blank" rel="noopener">Itinéraire</a></p>
+            <p><span class="infoTag">Parking</span> 5 impasse de l'Enfant Jésus, Paris</p>
+            <p><span class="infoTag">RATP</span> <a href="https://www.ratp.fr/itineraires?to=133%20rue%20de%20S%C3%A8vres%2075006%20Paris" target="_blank" rel="noopener">Trouvez votre itinéraire</a></p>
           </article>
 
           <article class="infoCard reveal">
             <img src="assets/icons/visio.svg" alt="" />
             <h3>Visio</h3>
             <p>(sur rendez-vous)</p>
-            <p>Lien Teams envoyé après la confirmation du rendez-vous.</p>
+            <p><strong>Lien Teams envoyé après la confirmation du rendez-vous.</strong></p>
           </article>
 
-          <article class="infoCard reveal">
+          <article class="infoCard infoCard--tight reveal">
             <img src="assets/icons/calendrier.svg" alt="" />
             <h3>Honoraires et séances</h3>
-            <p><strong>Première consultation (40 minutes)</strong> : 80 €</p>
-            <p><strong>Consultation de suivi (40 minutes)</strong> : 80 €</p>
-            <p>En fin de séance, le règlement peut s’effectuer en espèces, par CB ou par chèque.</p>
-            <p>La Sécurité sociale ne rembourse pas les consultations de psychologie. Certaines complémentaires santé peuvent toutefois les couvrir en partie. N’hésitez pas à vérifier avec votre mutuelle.</p>
-            <p>Pour toute annulation, merci de prévenir au moins 48 heures à l’avance. En cas d’annulations de dernière minute répétées, les séances seront dues.</p>
+            <p class="feeLine">Première consultation (40 minutes) : <span class="feeAmount">80 €</span></p>
+            <p class="feeLine">Consultation de suivi (40 minutes) : <span class="feeAmount">80 €</span></p>
+            <ul class="infoBullets">
+              <li>En fin de séance, le règlement peut s’effectuer en espèces, par CB ou par chèque.</li>
+              <li>La Sécurité sociale ne rembourse pas les consultations de psychologie. Certaines complémentaires santé peuvent toutefois les couvrir en partie. N’hésitez pas à vérifier avec votre mutuelle.</li>
+              <li>Pour toute annulation, merci de prévenir au moins 48 heures à l’avance. En cas d’annulations de dernière minute répétées, les séances seront dues.</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -341,7 +355,7 @@ Prendre rendez-vous</a>
           <div class="ctaBox__text">
             <h2>Prendre rendez-vous</h2>
             <p class="sublead">
-              Cliquez ci-dessous pour réserver un créneau sur Doctolib.<br />Sinon, vous pouvez aussi écrire un message.
+              Cliquez ci-dessous pour réserver un créneau sur <strong>Doctolib</strong>.<br />Sinon, vous pouvez aussi écrire un message.
             </p>
 
             <!-- IMPORTANT : remplace TON-LIEN par le vrai lien Calendly / autre -->
@@ -349,12 +363,14 @@ Prendre rendez-vous</a>
               <!-- Option : ajouter deux liens Calendly distincts (1re consult / suivi) quand les URLs seront créées. -->
               <a
   class="btn btn--primary"
-  href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris">
+  href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
+  target="_blank"
+  rel="noopener">
   Réserver un créneau
 </a>
 
               <!-- Enlever la classe hidden pour activer Doctolib -->
-              <a class="btn btn--secondary doctolib-btn hidden" href="https://www.doctolib.fr/">Prendre rendez-vous sur Doctolib</a>
+              <a class="btn btn--secondary doctolib-btn hidden" href="https://www.doctolib.fr/" target="_blank" rel="noopener">Prendre rendez-vous sur Doctolib</a>
               <a class="btn btn--ghost" href="#contact">Écrire un message</a>
             </div>
 
@@ -436,12 +452,26 @@ Prendre rendez-vous</a>
     // Menu mobile
     const btn = document.querySelector(".navToggle");
     const nav = document.querySelector(".nav");
+    const dropdown = document.querySelector(".nav__item--dropdown");
+    const dropdownLink = dropdown ? dropdown.querySelector(".nav__link") : null;
 
     btn.addEventListener("click", () => {
       const open = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("nav--open");
+      if (open && dropdown) {
+        dropdown.classList.remove("nav__item--open");
+      }
     });
+
+    if (dropdownLink) {
+      dropdownLink.addEventListener("click", (e) => {
+        if (window.matchMedia("(max-width: 860px)").matches) {
+          e.preventDefault();
+          dropdown.classList.toggle("nav__item--open");
+        }
+      });
+    }
 
     // Reveal on scroll
     const els = document.querySelectorAll(".reveal");
