@@ -150,8 +150,8 @@ a:hover{ opacity: 0.92; }
 .nav__cta{
   border: none;
   background:
-    radial-gradient(140px 70px at 15% 35%, rgba(240,90,126,0.18), transparent 60%),
-    radial-gradient(140px 70px at 85% 65%, rgba(107,143,134,0.16), transparent 60%),
+    radial-gradient(140px 70px at 15% 35%, rgba(240,90,126,0.12), transparent 60%),
+    radial-gradient(140px 70px at 85% 65%, rgba(107,143,134,0.10), transparent 60%),
     var(--paper);
   color: var(--text);
   box-shadow: 0 14px 26px rgba(20,18,16,0.14);
@@ -160,8 +160,8 @@ a:hover{ opacity: 0.92; }
 }
 .nav__cta:hover{
   background:
-    radial-gradient(140px 70px at 15% 35%, rgba(240,90,126,0.12), transparent 60%),
-    radial-gradient(140px 70px at 85% 65%, rgba(107,143,134,0.10), transparent 60%),
+    radial-gradient(140px 70px at 15% 35%, rgba(240,90,126,0.08), transparent 60%),
+    radial-gradient(140px 70px at 85% 65%, rgba(107,143,134,0.06), transparent 60%),
     var(--paper);
 }
 
@@ -190,9 +190,9 @@ a:hover{ opacity: 0.92; }
   position:absolute;
   inset:0;
   background:
-    radial-gradient(900px 340px at 10% 10%, rgba(240,90,126,0.12), transparent 60%),
-    radial-gradient(900px 340px at 75% 18%, rgba(246,211,74,0.14), transparent 60%),
-    radial-gradient(900px 340px at 40% 70%, rgba(107,143,134,0.14), transparent 60%);
+    radial-gradient(900px 340px at 10% 10%, rgba(240,90,126,0.06), transparent 60%),
+    radial-gradient(900px 340px at 75% 18%, rgba(246,211,74,0.06), transparent 60%),
+    radial-gradient(900px 340px at 40% 70%, rgba(107,143,134,0.06), transparent 60%);
   pointer-events:none;
 }
 .hero__inner{
@@ -219,7 +219,17 @@ a:hover{ opacity: 0.92; }
   font-size: 16px;
   color: color-mix(in srgb, var(--text) 86%, var(--muted));
   margin: 0 0 22px;
+  max-width: 70ch;
+  line-height: 1.7;
 }
+.lead + .lead{ margin-top: 12px; }
+
+.prose{
+  margin: 12px 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+.prose + .prose{ margin-top: 12px; }
 .hero__actions{
   display:flex;
   gap: 12px;
@@ -247,6 +257,12 @@ a:hover{ opacity: 0.92; }
   background: var(--paper);
   color: var(--text);
 }
+.btn--secondary{
+  background: color-mix(in srgb, var(--paper) 92%, var(--bg));
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+.hidden{ display: none; }
 .btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 20px rgba(20,18,16,0.08); }
 .btn:active{ transform: translateY(0px); }
 
@@ -505,9 +521,9 @@ a:hover{ opacity: 0.92; }
   display:grid;
   place-items: center;
   background:
-    radial-gradient(24px 24px at 30% 30%, rgba(246,211,74,0.35), transparent 70%),
-    radial-gradient(24px 24px at 70% 70%, rgba(240,90,126,0.22), transparent 70%),
-    rgba(107,143,134,0.08);
+    radial-gradient(24px 24px at 30% 30%, rgba(246,211,74,0.18), transparent 70%),
+    radial-gradient(24px 24px at 70% 70%, rgba(240,90,126,0.14), transparent 70%),
+    rgba(107,143,134,0.05);
   border: 1px solid rgba(23,23,22,0.06);
   margin-bottom: 12px;
 }
@@ -631,12 +647,13 @@ a:hover{ opacity: 0.92; }
 .infoCard img{ width: 24px; height: 24px; opacity: 0.9; }
 .infoCard h3{ margin: 10px 0 8px; font-size: 16px; }
 .infoCard p{ margin: 0 0 8px; }
+.infoCard p + p{ margin-top: 6px; }
 .muted{ color: var(--muted); font-size: 13px; }
 
 .section--cta{
   background:
-    radial-gradient(700px 240px at 18% 20%, rgba(246,211,74,0.18), transparent 60%),
-    radial-gradient(700px 240px at 80% 55%, rgba(107,143,134,0.18), transparent 60%),
+    radial-gradient(700px 240px at 18% 20%, rgba(246,211,74,0.08), transparent 60%),
+    radial-gradient(700px 240px at 80% 55%, rgba(107,143,134,0.08), transparent 60%),
     color-mix(in srgb, var(--paper) 65%, var(--bg));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
