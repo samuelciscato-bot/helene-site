@@ -401,14 +401,23 @@ Prendre rendez-vous</a>
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
   </script>
-  <script>
+ <script>
   document.querySelectorAll("a.js-calendly").forEach((el) => {
     el.addEventListener("click", (e) => {
-      e.preventDefault(); // empêche d’ouvrir Calendly dans un nouvel onglet
-      Calendly.initPopupWidget({ url: el.href }); // ouvre la pop-up
+      e.preventDefault();
+
+      // 1) Scroll vers la section Modalités
+      const target = document.querySelector("#modalites");
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      // 2) Ouvre la pop-up Calendly après un court délai
+      setTimeout(() => {
+        Calendly.initPopupWidget({ url: el.href });
+      }, 100);
     });
   });
 </script>
+
 
 </body>
 </html>
