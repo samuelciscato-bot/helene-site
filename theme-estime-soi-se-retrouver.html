@@ -21,16 +21,14 @@
   <meta property="og:url" content="https://helene-nguyen-psychologue.fr/theme-estime-soi-se-retrouver.html" />
   <meta property="og:image" content="https://helene-nguyen-psychologue.fr/assets/illustrations/theme-self.svg" />
 
-  <link href="https://calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://calendly.com/assets/external/widget.js" type="text/javascript"></script>
-</head>
+    </head>
 
 <body class="themePage themePage--self">
   <a class="skip" href="#contenu">Aller au contenu</a>
 
   <header class="header">
     <div class="wrap header__inner">
-      <a class="brand" href="index.html#top" aria-label="Aller en haut de page">
+      <a class="brand" href="index.html#bienvenue" aria-label="Aller en haut de page">
         <span class="brand__name">Hélène Nguyen</span>
         <span class="brand__tag">Psychologue clinicienne, Paris</span>
       </a>
@@ -39,23 +37,13 @@
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="index.html#pour-qui">Pour qui</a>
+                  <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html#bienvenue">Présentation</a>
         <a href="index.html#approche">Approche</a>
         <a href="index.html#modalites">Modalités</a>
-        <div class="nav__item nav__item--dropdown">
-          <a href="index.html#themes" class="nav__link">Thèmes <span class="nav__chevron" aria-hidden="true"></span></a>
-          <div class="nav__dropdown" aria-label="Thèmes">
-            <a href="theme-souffrance-mal-etre-travail.html">Souffrance / mal-être au travail</a>
-            <a href="theme-perte-sens-transition-conflits.html">Perte de sens / transition pro / conflits</a>
-            <a href="theme-burnout-epuisement.html">Burn-out & épuisement</a>
-            <a href="theme-mieux-vivre-couple.html">Mieux vivre le couple</a>
-            <a href="theme-estime-soi-se-retrouver.html">Estime de soi / se retrouver</a>
-          </div>
-        </div>
         <a
-  href="https://calendly.com/samuel-ciscato-platypousse/helene"
-  class="nav__cta js-calendly"
+  href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
+  class="nav__cta"
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -80,7 +68,7 @@
             <li>Besoin de reprendre confiance et de s’appuyer sur soi</li>
           </ul>
           <div class="hero__actions">
-            <a class="btn btn--primary js-calendly" href="https://calendly.com/samuel-ciscato-platypousse/helene">Prendre rendez-vous</a>
+            <a class="btn btn--primary" href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris">Prendre rendez-vous</a>
             <a class="btn btn--ghost" href="index.html#themes">Retour aux thèmes</a>
           </div>
         </div>
@@ -148,7 +136,7 @@
             <h2>Se remettre au centre</h2>
             <p class="sublead">Une première séance pour clarifier, puis un rythme ajusté à votre besoin.</p>
             <div class="ctaBox__actions">
-              <a class="btn btn--primary js-calendly" href="https://calendly.com/samuel-ciscato-platypousse/helene">Réserver un créneau</a>
+              <a class="btn btn--primary" href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris">Réserver un créneau</a>
               <a class="btn btn--ghost" href="index.html#contact">Écrire un message</a>
             </div>
           </div>
@@ -184,24 +172,12 @@
 
     const btn = document.querySelector(".navToggle");
     const nav = document.querySelector(".nav");
-    const dropdown = document.querySelector(".nav__item--dropdown");
-    const dropdownLink = dropdown ? dropdown.querySelector(".nav__link") : null;
 
     btn.addEventListener("click", () => {
       const open = btn.getAttribute("aria-expanded") === "true";
       btn.setAttribute("aria-expanded", String(!open));
       nav.classList.toggle("nav--open");
-      if (open && dropdown) {
-        dropdown.classList.remove("nav__item--open");
-      }
     });
-
-    if (dropdownLink) {
-      dropdownLink.addEventListener("click", (e) => {
-        if (window.matchMedia("(max-width: 860px)").matches) {
-          e.preventDefault();
-          dropdown.classList.toggle("nav__item--open");
-        }
       });
     }
 
@@ -215,20 +191,6 @@
       });
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
-  </script>
-  <script>
-    document.querySelectorAll("a.js-calendly").forEach((el) => {
-      el.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const target = document.querySelector("#modalites");
-        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        setTimeout(() => {
-          Calendly.initPopupWidget({ url: el.href });
-        }, 250);
-      });
-    });
   </script>
 </body>
 </html>

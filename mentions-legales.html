@@ -11,16 +11,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-</head>
+    </head>
 <body>
   <header class="header">
     <div class="wrap header__inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html#bienvenue">
         <span class="brand__name">Hélène Nguyen</span>
         <span class="brand__tag">Psychologue clinicienne, Paris</span>
       </a>
-      <nav class="nav" aria-label="Navigation">
-        <a href="index.html#rdv" class="nav__cta">Prendre rendez-vous</a>
+
+      <button class="navToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+                  <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html#bienvenue">Présentation</a>
+        <a href="index.html#approche">Approche</a>
+        <a href="index.html#modalites">Modalités</a>
+        <a
+  href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
+  class="nav__cta"
+>Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
@@ -38,11 +49,10 @@
         <p>
           <strong>Hélène Nguyen</strong><br />
           Psychologue clinicienne<br />
-          Paris, France<br />
-          Email : <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
-        </p>
-        <p class="muted">
-          À compléter si nécessaire : adresse professionnelle complète, numéro SIRET, numéro ADELI ou RPPS si applicable.
+          133 rue de Sèvres – 75006 Paris<br />
+          RPPS : 10111004437<br />
+          SIRET : 91431411700021<br />
+          Email : <a href="mailto:helenenguyen.psychologue@gmail.com">helenenguyen.psychologue@gmail.com</a>
         </p>
 
         <h3>Hébergement</h3>
@@ -60,8 +70,10 @@
         <h3>Contact</h3>
         <p>
           Pour toute question, vous pouvez écrire à :
-          <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
+          <a href="mailto:helenenguyen.psychologue@gmail.com">helenenguyen.psychologue@gmail.com</a>
         </p>
+
+        <p class="muted">Dernière mise à jour : 21 janvier 2026</p>
       </div>
     </div>
   </main>
@@ -79,6 +91,17 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const btn = document.querySelector(".navToggle");
+    const nav = document.querySelector(".nav");
+
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("nav--open");
+    });
+      });
+    }
   </script>
 </body>
 </html>

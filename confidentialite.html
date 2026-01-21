@@ -11,16 +11,27 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-</head>
+    </head>
 <body>
   <header class="header">
     <div class="wrap header__inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html#bienvenue">
         <span class="brand__name">Hélène Nguyen</span>
         <span class="brand__tag">Psychologue clinicienne, Paris</span>
       </a>
-      <nav class="nav" aria-label="Navigation">
-        <a href="index.html#rdv" class="nav__cta">Prendre rendez-vous</a>
+
+      <button class="navToggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+                  <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html#bienvenue">Présentation</a>
+        <a href="index.html#approche">Approche</a>
+        <a href="index.html#modalites">Modalités</a>
+        <a
+  href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
+  class="nav__cta"
+>Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
       </nav>
     </div>
@@ -36,30 +47,28 @@
       <div class="card">
         <h3>1. Données transmises via le formulaire de contact</h3>
         <p>
-          Si vous utilisez le formulaire, vous pouvez transmettre : nom (facultatif), email, message.
-          Ces informations servent uniquement à répondre à votre demande.
+          Si vous utilisez le formulaire, vous pouvez transmettre : nom, email, numéro de téléphone, message.
+          Ces informations servent uniquement à répondre à votre demande et sont obligatoires.
         </p>
 
         <h3>2. Prise de rendez-vous</h3>
         <p>
-          La prise de rendez-vous se fait via un lien externe (par exemple un outil de réservation).
-          Les informations collectées et leur durée de conservation dépendent de l’outil utilisé.
+          La prise de rendez-vous se fait via un lien externe (Calendly). Les informations collectées
+          et leur durée de conservation dépendent de ce service tiers.
         </p>
 
         <h3>3. Cookies et mesures d’audience</h3>
         <p>
-          Ce site peut fonctionner sans cookies. Si un outil d’audience est ajouté plus tard, cette page sera mise à jour.
+          Ce site vitrine peut fonctionner sans cookies. Si un outil de mesure d’audience est ajouté,
+          cette page sera mise à jour.
         </p>
 
         <h3>4. Contact</h3>
         <p>
           Pour toute question relative à la confidentialité, écrivez à :
-          <a href="mailto:contact@helene-nguyen-psychologue.fr">contact@helene-nguyen-psychologue.fr</a>
+          <a href="mailto:helenenguyen.psychologue@gmail.com">helenenguyen.psychologue@gmail.com</a>
         </p>
-
-        <p class="muted">
-          Conseil pratique : si tu ajoutes Google Analytics, Meta Pixel ou autre, il faudra mettre à jour cette page.
-        </p>
+        <p class="muted">Dernière mise à jour : 21 janvier 2026</p>
       </div>
     </div>
   </main>
@@ -77,6 +86,17 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const btn = document.querySelector(".navToggle");
+    const nav = document.querySelector(".nav");
+
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("nav--open");
+    });
+      });
+    }
   </script>
 </body>
 </html>
