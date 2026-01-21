@@ -314,9 +314,9 @@ a:hover{ opacity: 0.92; }
 }
 .hero__photo img{
   width:100%;
-  height: 380px;
+  height: 460px;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 5%;
   display:block;
 }
 .hero__photo figcaption{
@@ -613,7 +613,7 @@ a:hover{ opacity: 0.92; }
 }
 .split__media img{
   width:100%;
-  height: 440px;
+  height: 520px;
   object-fit: cover;
   object-position: center 30%;
   border-radius: var(--radius);
@@ -716,18 +716,42 @@ a:hover{ opacity: 0.92; }
 }
 .infoCard strong{ color: var(--text); }
 .infoCard--tight p{ margin-bottom: 6px; }
+.feeLine{ color: var(--muted); }
+.feeAmount{ color: var(--text); font-weight: 600; }
+.infoBullets{
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.infoBullets li{
+  position: relative;
+  padding-left: 18px;
+  margin: 8px 0;
+  color: var(--muted);
+}
+.infoBullets li::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 0.52em;
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--accent) 60%, var(--accent2));
+  box-shadow: 0 0 0 3px rgba(240,90,126,0.12);
+}
 .infoTag{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  min-width: 26px;
+  min-width: 54px;
   height: 22px;
   padding: 0 6px;
   margin-right: 8px;
   border-radius: 999px;
-  background: rgba(107,143,134,0.10);
+  background: color-mix(in srgb, var(--accent) 35%, var(--paper));
   color: var(--text);
-  font-size: 11px;
+  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -872,10 +896,10 @@ a:hover{ opacity: 0.92; }
 /* Responsive */
 @media (max-width: 980px){
   .hero__inner{ grid-template-columns: 1fr; }
-  .hero__photo img{ height: 320px; }
+  .hero__photo img{ height: 360px; }
   .hero__cards{ grid-template-columns: 1fr; }
   .split{ grid-template-columns: 1fr; }
-  .split__media img{ height: 340px; }
+  .split__media img{ height: 420px; }
   .ctaBox{ grid-template-columns: 1fr; }
   .ctaBox__side{ border-left: none; border-top: 1px solid var(--line); }
   .grid3{ grid-template-columns: 1fr; }
