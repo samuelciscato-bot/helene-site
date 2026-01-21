@@ -97,13 +97,13 @@ a:hover{ opacity: 0.92; }
 .nav__link{
   display:inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
 }
 .nav__chevron{
   display:inline-block;
   width: 6px;
   height: 6px;
-  margin-left: 6px;
+  margin-left: 2px;
   border-right: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
   transform: rotate(45deg);
@@ -149,10 +149,9 @@ a:hover{ opacity: 0.92; }
 }
 .nav__cta{
   border: 1px solid var(--line);
-  background: var(--text);
-  color: var(--paper);
-  box-shadow: 0 10px 20px rgba(20,18,16,0.12);
-  font-weight: 600;
+  background: var(--paper);
+  color: var(--text);
+  box-shadow: none;
 }
 
 .navToggle{
