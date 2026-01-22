@@ -75,17 +75,27 @@
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="#bienvenue">Présentation</a>
-        <a href="#approche">Approche</a>
-        <a href="#modalites">Modalités</a>
+                  <nav class="nav" aria-label="Navigation principale">
+        <a href="index.html#bienvenue">Présentation</a>
+        <a href="index.html#approche">Approche</a>
+        <div class="nav__item nav__item--dropdown">
+          <a href="index.html#pour-qui" class="nav__link">Motifs de consultation <span class="nav__chevron" aria-hidden="true"></span></a>
+          <div class="nav__dropdown" aria-label="Motifs de consultation">
+            <a href="theme-souffrance-mal-etre-travail.html">Souffrance au travail / burn-out / dépression</a>
+            <a href="theme-mieux-vivre-couple.html">Difficultés relationnelles</a>
+            <a href="theme-estime-soi-se-retrouver.html">Troubles émotionnels</a>
+            <a href="theme-perte-sens-transition-conflits.html">Quête de sens / transition de vie</a>
+            <a href="theme-burnout-epuisement.html">Apprendre à mieux se connaître</a>
+          </div>
+        </div>
+        <a href="index.html#modalites">Modalités</a>
         <a
   href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
   class="nav__cta"
   target="_blank"
   rel="noopener"
 >Prendre rendez-vous</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -227,127 +237,61 @@ Prendre rendez-vous</a>
       </div>
     </section>
 
-    <!-- Section "Motifs de consultation" masquée sur demande, contenu conservé pour usage futur.
-    <section class="section" id="pour-qui">
+            <section class="section" id="pour-qui">
       <div class="wrap">
         <div class="section__head reveal">
           <h2>Motifs de consultation</h2>
-          <p class="sublead">Quelques situations fréquentes, sans étiquette, ni recette toute faite.</p>
         </div>
 
         <div class="grid3">
-          <article class="card card--theme card--work reveal">
-            <div class="card__icon">
-              <img src="assets/icons/travail.svg" alt="" />
-            </div>
-            <h3>Stress et surcharge</h3>
+          <a class="card card--theme card--work card--link reveal" href="theme-souffrance-mal-etre-travail.html">
+            <h3>Souffrance au travail / Burn-out / dépression</h3>
             <ul class="list">
-              <li>Fatigue, surcharge mentale</li>
-              <li>Pression, surmenage</li>
-              <li>Difficulté à déconnecter</li>
+              <li>Fatigue persistante, sommeil fragile</li>
+              <li>Pression, anxiété, perte de sens</li>
             </ul>
-            <a class="card__link" href="theme-souffrance-mal-etre-travail.html">En savoir plus</a>
-          </article>
+            <span class="card__link">En savoir plus</span>
+          </a>
 
-          <article class="card card--theme card--burnout reveal">
-            <div class="card__icon">
-              <img src="assets/icons/coeur-calme.svg" alt="" />
-            </div>
-            <h3>Burn-out & épuisement / dépression</h3>
+          <a class="card card--theme card--couple card--link reveal" href="theme-mieux-vivre-couple.html">
+            <h3>Difficultés relationnelles</h3>
             <ul class="list">
-              <li>Épuisement, perte d’élan</li>
-              <li>Irritabilité, fatigue durable</li>
-              <li>Retrouver un équilibre</li>
+              <li>Conflits, distance, rupture</li>
+              <li>Famille, ami.e.s, collègues</li>
             </ul>
-            <a class="card__link" href="theme-burnout-epuisement.html">En savoir plus</a>
-          </article>
+            <span class="card__link">En savoir plus</span>
+          </a>
 
-          <article class="card card--theme card--sense reveal">
-            <div class="card__icon">
-              <img src="assets/icons/bulle-dialogue.svg" alt="" />
-            </div>
-            <h3>Conflits et relations</h3>
+          <a class="card card--theme card--self card--link reveal" href="theme-estime-soi-se-retrouver.html">
+            <h3>Troubles émotionnels</h3>
             <ul class="list">
-              <li>Tensions au travail</li>
-              <li>Conflits de couple, famille, ami.e.s</li>
-              <li>Difficulté à poser des limites</li>
+              <li>Anxiété, angoisse, tristesse</li>
+              <li>Émotions envahissantes, limites</li>
             </ul>
-            <a class="card__link" href="theme-perte-sens-transition-conflits.html">En savoir plus</a>
-          </article>
+            <span class="card__link">En savoir plus</span>
+          </a>
 
-          <article class="card card--theme card--couple reveal">
-            <div class="card__icon">
-              <img src="assets/icons/calendrier.svg" alt="" />
-            </div>
-            <h3>Événements de vie</h3>
+          <a class="card card--theme card--sense card--link reveal" href="theme-perte-sens-transition-conflits.html">
+            <h3>Quête de sens / transition de vie</h3>
             <ul class="list">
-              <li>Rupture amoureuse, séparation</li>
-              <li>Perte d’emploi, transition</li>
-              <li>Deuil, changements</li>
+              <li>Questionnements, valeurs, priorités</li>
+              <li>Reconversion, pertes, obstacles</li>
             </ul>
-            <a class="card__link" href="theme-mieux-vivre-couple.html">En savoir plus</a>
-          </article>
+            <span class="card__link">En savoir plus</span>
+          </a>
 
-          <article class="card card--theme card--self reveal">
-            <div class="card__icon">
-              <img src="assets/icons/visio.svg" alt="" />
-            </div>
-            <h3>Anxiété, sommeil, émotions</h3>
+          <a class="card card--theme card--burnout card--link reveal" href="theme-burnout-epuisement.html">
+            <h3>Apprendre à mieux se connaître</h3>
             <ul class="list">
-              <li>Anxiété, ruminations</li>
-              <li>Sommeil perturbé</li>
-              <li>Émotions envahissantes</li>
+              <li>Comprendre ses réactions</li>
+              <li>Choix plus alignés</li>
             </ul>
-            <a class="card__link" href="theme-estime-soi-se-retrouver.html">En savoir plus</a>
-          </article>
+            <span class="card__link">En savoir plus</span>
+          </a>
         </div>
       </div>
     </section>
-    -->
 
-    <section class="section" id="modalites">
-      <div class="wrap">
-        <div class="section__head reveal">
-          <h2>Modalités</h2>
-          <p class="sublead">Pour savoir où et comment se dérouleront vos séances.</p>
-        </div>
-
-        <div class="grid3">
-          <article class="infoCard reveal">
-            <img src="assets/icons/localisation.svg" alt="" />
-            <h3>Cabinet</h3>
-            <p>(sur rendez-vous)</p>
-            <p><strong>133 rue de Sèvres, 75006 Paris</strong></p>
-            <p><span class="infoTag">Métro</span> Duroc (lignes 10 et 13)</p>
-            <p><span class="infoTag">Métro</span> Vaneau (ligne 10)</p>
-            <p><span class="infoTag">Métro</span> Montparnasse-Bienvenüe (lignes 4, 6, 12 et 13)</p>
-            <p><span class="infoTag">Gare</span> Montparnasse</p>
-            <p><span class="infoTag">Bus</span> Duroc (lignes 82 et 92)</p>
-            <p><span class="infoTag">Parking</span> 5 impasse de l'Enfant Jésus, Paris</p>
-            <p><span class="infoTag">RATP</span> <a href="https://www.ratp.fr/itineraires?to=133%20rue%20de%20S%C3%A8vres%2075006%20Paris" target="_blank" rel="noopener">Trouvez votre itinéraire</a></p>
-          </article>
-
-          <article class="infoCard reveal">
-            <img src="assets/icons/visio.svg" alt="" />
-            <h3>Visio</h3>
-            <p>(sur rendez-vous)</p>
-            <p><strong>Lien Teams envoyé après la confirmation du rendez-vous.</strong></p>
-          </article>
-
-          <article class="infoCard infoCard--tight reveal">
-            <img src="assets/icons/calendrier.svg" alt="" />
-            <h3>Honoraires et séances</h3>
-            <p class="feeLine">Première consultation (40 minutes) : <span class="feeAmount">80 €</span></p>
-            <p class="feeLine">Consultation de suivi (40 minutes) : <span class="feeAmount">80 €</span></p>
-            <ul class="infoBullets">
-              <li>En fin de séance, le règlement peut s’effectuer en espèces, par CB ou par chèque.</li>
-              <li>La Sécurité sociale ne rembourse pas les consultations de psychologie. Certaines complémentaires santé peuvent toutefois les couvrir en partie. N’hésitez pas à vérifier avec votre mutuelle.</li>
-              <li>Pour toute annulation, merci de prévenir au moins 48 heures à l’avance. En cas d’annulations de dernière minute répétées, les séances seront dues.</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
 
     <section class="section section--cta" id="rdv">
       <div class="wrap reveal">
