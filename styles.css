@@ -992,6 +992,12 @@ a:hover{ opacity: 0.92; }
     --theme-media-height: 420px;
     --theme-media-width: 100%;
   }
+  .themePage .themeHero__inner{
+    grid-template-columns: 1fr;
+  }
+  .themePage .section--split .split{
+    grid-template-columns: 1fr;
+  }
   .themePage .themeHero__media,
   .themePage .split__media{
     width: 100%;
