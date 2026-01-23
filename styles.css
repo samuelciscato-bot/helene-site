@@ -752,6 +752,8 @@ a:hover{ opacity: 0.92; }
   padding-left: 18px;
   margin: 8px 0;
   color: color-mix(in srgb, var(--text) 86%, var(--muted));
+  font-size: 14px;
+  line-height: 1.35;
 }
 .list li::before{
   content:"";
