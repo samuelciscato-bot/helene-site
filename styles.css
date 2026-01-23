@@ -644,6 +644,7 @@ a:hover{ opacity: 0.92; }
   position: relative;
   overflow: hidden;
 }
+.card--theme{ min-height: 230px; }
 .card--link{
   display: flex;
   flex-direction: column;
@@ -746,6 +747,12 @@ a:hover{ opacity: 0.92; }
   margin: 0;
   padding: 0;
   list-style: none;
+}
+.card--theme .list{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .list li{
   position: relative;
