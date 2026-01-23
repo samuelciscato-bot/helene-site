@@ -286,7 +286,7 @@ a:hover{ opacity: 0.92; }
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 9px;
 }
 .miniCard{
   background: color-mix(in srgb, var(--paper) 88%, transparent);
@@ -350,6 +350,7 @@ a:hover{ opacity: 0.92; }
   max-width: 70ch;
 }
 .sublead--strong{ color: var(--text); }
+.prose--strong{ color: var(--text); }
 
 .grid3{
   display:grid;
@@ -415,7 +416,7 @@ a:hover{ opacity: 0.92; }
 }
 .themeCard__cta{
   display:inline-flex;
-  margin-top: 12px;
+  margin-top: 10px;
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -644,7 +645,8 @@ a:hover{ opacity: 0.92; }
   position: relative;
   overflow: hidden;
 }
-.card--theme{ min-height: 230px; }
+.card--theme{ min-height: 205px; }
+.card--theme h3{ min-height: 44px; }
 .card--link{
   display: flex;
   flex-direction: column;
@@ -749,15 +751,18 @@ a:hover{ opacity: 0.92; }
   list-style: none;
 }
 .card--theme .list{
-  flex: 1;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 8px;
+  height: calc(2 * 1.35em + 8px);
+  overflow: visible;
+  margin-top: 12px;
 }
 .list li{
   position: relative;
   padding-left: 18px;
-  margin: 8px 0;
+  margin: 0;
   color: color-mix(in srgb, var(--text) 86%, var(--muted));
   font-size: 14px;
   line-height: 1.35;
