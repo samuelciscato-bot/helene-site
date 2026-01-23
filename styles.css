@@ -349,6 +349,7 @@ a:hover{ opacity: 0.92; }
   color: var(--muted);
   max-width: 70ch;
 }
+.sublead--strong{ color: var(--text); }
 
 .grid3{
   display:grid;
@@ -836,6 +837,7 @@ a:hover{ opacity: 0.92; }
   padding: 14px 14px;
   color: var(--muted);
 }
+.note__text--strong{ color: var(--text); }
 .note strong{ color: var(--text); }
 .note--full{
   display:flex;
