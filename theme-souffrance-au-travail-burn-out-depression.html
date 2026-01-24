@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="assets/js/faq-data.js"></script>
+  <script defer src="assets/js/faq-render.js"></script>
 
   <meta property="og:title" content="Souffrance au travail / burn-out / dépression | Hélène Nguyen" />
   <meta property="og:description" content="Souffrance au travail, burn-out, dépression : fatigue persistante, stress, perte de sens. Un accompagnement pour clarifier, retrouver de l’élan et des repères." />
@@ -160,24 +162,7 @@
     <section class="section faqSection">
       <div class="wrap">
         <h2><img class="h2-icon" src="assets/icons/soleil-discret.svg" alt="" />Questions fréquentes</h2>
-        <div class="faq">
-          <details>
-            <summary>Comment savoir si je fais un burn-out ?</summary>
-            <p>Le burn-out n’a pas un seul visage. Fatigue persistante, perte d’élan, troubles du sommeil, irritabilité, anxiété ou sentiment d’impasse sont des signaux fréquents. Une première séance permet de poser un premier éclairage sur ce que vous traversez.</p>
-          </details>
-          <details>
-            <summary>Est-ce que je dois être ‘au plus mal’ pour consulter ?</summary>
-            <p>Non. Consulter peut justement aider avant que la situation ne déborde davantage, pour comprendre ce qui pèse et envisager des ajustements réalistes.</p>
-          </details>
-          <details>
-            <summary>En combien de temps peut-on aller mieux ?</summary>
-            <p>Cela dépend de votre situation, de votre rythme et de vos objectifs. L’idée est d’avancer pas à pas, en construisant des repères concrets et un apaisement durable.</p>
-          </details>
-          <details>
-            <summary>Psychologue ou psychiatre, quelle différence ?</summary>
-            <p>Un psychologue propose un accompagnement par la parole et la compréhension des vécus. Un psychiatre est médecin et peut prescrire un traitement. Selon les situations, les deux approches peuvent être complémentaires.</p>
-          </details>
-        </div>
+        <div class="faq" data-faq data-faq-page="work"></div>
       </div>
     </section>
   </main>

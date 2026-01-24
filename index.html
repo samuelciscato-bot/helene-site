@@ -19,6 +19,8 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="assets/js/faq-data.js"></script>
+  <script defer src="assets/js/faq-render.js"></script>
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ec68d888794047df802be76392c2776e"}'></script>
   <!-- End Cloudflare Web Analytics -->
@@ -304,11 +306,11 @@ Prendre rendez-vous</a>
       </div>
     </section>
 
-
     <section class="section section--cta" id="rdv">
       <div class="wrap reveal">
-        <div class="ctaBox">
+        <div class="ctaBox ctaBox--focus">
           <div class="ctaBox__text">
+            <span class="ctaTag">Réservation en ligne</span>
             <h2>Prendre rendez-vous</h2>
             <p class="sublead">
               Cliquez ci-dessous pour réserver un créneau sur <strong>Doctolib</strong>.<br />Sinon, vous pouvez aussi écrire un message.
@@ -341,7 +343,29 @@ Prendre rendez-vous</a>
             -->
           </div>
 
+          <div class="ctaBox__side">
+            <div class="badge">
+              <span class="badge__dot" aria-hidden="true"></span>
+              <div>
+                <strong>Première séance sans engagement</strong>
+                <p class="muted">Permet de préciser la demande et décider ensemble de la suite.</p>
+              </div>
+            </div>
+            <ul class="sideList">
+              <li><strong>Cabinet ou visio</strong></li>
+              <li>Entretiens ponctuels</li>
+              <li>Soutien temporaire</li>
+              <li>Suivi psychothérapique</li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section faqSection">
+      <div class="wrap">
+        <h2><img class="h2-icon" src="assets/icons/soleil-discret.svg" alt="" />Questions fréquentes</h2>
+        <div class="faq" data-faq data-faq-jsonld="true"></div>
       </div>
     </section>
 

@@ -955,11 +955,22 @@ a:hover{ opacity: 0.92; }
 
 .section--cta{
   background:
-    radial-gradient(700px 240px at 18% 20%, rgba(246,211,74,0.08), transparent 60%),
-    radial-gradient(700px 240px at 80% 55%, rgba(107,143,134,0.08), transparent 60%),
-    color-mix(in srgb, var(--paper) 65%, var(--bg));
+    radial-gradient(700px 240px at 14% 18%, rgba(246,211,74,0.14), transparent 60%),
+    radial-gradient(700px 260px at 85% 60%, rgba(240,90,126,0.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,0.6), transparent 70%),
+    color-mix(in srgb, var(--paper) 70%, var(--bg));
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
+}
+.section--cta .btn--primary{
+  background: linear-gradient(140deg, var(--accent2), color-mix(in srgb, var(--accent2) 30%, var(--accent)));
+  color: #fff;
+  box-shadow: 0 12px 22px rgba(240,90,126,0.25);
+}
+.section--cta .btn--primary:hover{ filter: brightness(0.98); }
+.section--cta .btn--primary:focus-visible{
+  outline: 2px solid color-mix(in srgb, var(--accent2) 50%, var(--accent));
+  outline-offset: 3px;
 }
 
 .ctaBox{
@@ -971,8 +982,35 @@ a:hover{ opacity: 0.92; }
   display:grid;
   grid-template-columns: 1.2fr 0.8fr;
 }
+.ctaBox--focus{
+  position: relative;
+  box-shadow: 0 20px 44px rgba(20,18,16,0.10);
+  border-color: color-mix(in srgb, var(--accent) 25%, var(--line));
+}
+.ctaBox--focus::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--accent2), var(--accent3));
+}
 .ctaBox__text{
   padding: 22px;
+}
+.ctaTag{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: color-mix(in srgb, var(--accent3) 65%, var(--paper));
+  color: color-mix(in srgb, var(--text) 85%, var(--muted));
+  margin-bottom: 8px;
 }
 .ctaBox__text h2{
   font-family: var(--serif);
@@ -1000,6 +1038,7 @@ a:hover{ opacity: 0.92; }
   background: rgba(107,143,134,0.08);
   margin-bottom: 14px;
 }
+.badge p{ margin: 4px 0 0; }
 .badge__dot{
   width: 10px;
   height: 10px;

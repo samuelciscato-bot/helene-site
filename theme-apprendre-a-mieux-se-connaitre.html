@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="assets/js/faq-data.js"></script>
+  <script defer src="assets/js/faq-render.js"></script>
 
   <meta property="og:title" content="Apprendre à mieux se connaître | Hélène Nguyen" />
   <meta property="og:description" content="Comprendre ses schémas, ses émotions et ses besoins pour faire des choix plus alignés et avancer avec davantage de clarté." />
@@ -155,24 +157,7 @@
     <section class="section faqSection">
       <div class="wrap">
         <h2><img class="h2-icon" src="assets/icons/soleil-discret.svg" alt="" />Questions fréquentes</h2>
-        <div class="faq">
-          <details>
-            <summary>Je veux mieux me comprendre, mais je n’ai pas de ‘problème’ précis.</summary>
-            <p>C’est une raison valable. L’accompagnement peut aider à clarifier votre fonctionnement, vos besoins, vos limites et ce qui vous met en mouvement.</p>
-          </details>
-          <details>
-            <summary>Est-ce que ça aide pour la confiance en soi ?</summary>
-            <p>Oui, en comprenant les mécanismes de doute, d’exigence ou d’auto-critique, et en construisant des repères plus soutenants.</p>
-          </details>
-          <details>
-            <summary>Je répète toujours les mêmes schémas, pourquoi ?</summary>
-            <p>Les schémas se construisent souvent pour se protéger. Les comprendre permet de retrouver du choix et d’expérimenter d’autres façons de faire.</p>
-          </details>
-          <details>
-            <summary>Combien de séances faut-il ?</summary>
-            <p>Cela dépend de votre objectif. Certaines personnes viennent pour un travail ciblé, d’autres pour une exploration plus progressive.</p>
-          </details>
-        </div>
+        <div class="faq" data-faq data-faq-page="self"></div>
       </div>
     </section>
   </main>

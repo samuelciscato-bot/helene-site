@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="assets/js/faq-data.js"></script>
+  <script defer src="assets/js/faq-render.js"></script>
 
   <meta property="og:title" content="Quête de sens / transition de vie | Hélène Nguyen" />
   <meta property="og:description" content="Questionnements, reconversion, pertes ou transitions : clarifier ce qui compte et traverser le changement avec des repères." />
@@ -160,24 +162,7 @@
     <section class="section faqSection">
       <div class="wrap">
         <h2><img class="h2-icon" src="assets/icons/soleil-discret.svg" alt="" />Questions fréquentes</h2>
-        <div class="faq">
-          <details>
-            <summary>Je suis perdu.e, est-ce une crise existentielle ?</summary>
-            <p>Parfois oui, parfois c’est une transition qui bouscule des repères. Mettre des mots et clarifier les enjeux aide déjà à retrouver une direction.</p>
-          </details>
-          <details>
-            <summary>Je veux changer de vie mais je ne sais pas quoi faire.</summary>
-            <p>L’accompagnement peut aider à distinguer ce qui relève d’un épuisement, d’un besoin de cohérence ou d’un désir profond, pour avancer plus clairement.</p>
-          </details>
-          <details>
-            <summary>Après une séparation ou un deuil, combien de temps faut-il ?</summary>
-            <p>Il n’y a pas de calendrier universel. L’objectif est d’accueillir le vécu, de traverser la période et de reconstruire des repères, à votre rythme.</p>
-          </details>
-          <details>
-            <summary>Est-ce que parler suffit ?</summary>
-            <p>Parler n’est pas ‘juste parler’. C’est donner forme, sens et continuité à ce qui est confus, pour retrouver un appui intérieur et des choix plus alignés.</p>
-          </details>
-        </div>
+        <div class="faq" data-faq data-faq-page="sense"></div>
       </div>
     </section>
   </main>

@@ -14,6 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script defer src="assets/js/faq-data.js"></script>
+  <script defer src="assets/js/faq-render.js"></script>
 
   <meta property="og:title" content="Troubles émotionnels | Hélène Nguyen" />
   <meta property="og:description" content="Anxiété, stress, tristesse persistante, crises d’angoisse : un accompagnement pour comprendre et retrouver une stabilité émotionnelle." />
@@ -158,24 +160,7 @@
     <section class="section faqSection">
       <div class="wrap">
         <h2><img class="h2-icon" src="assets/icons/soleil-discret.svg" alt="" />Questions fréquentes</h2>
-        <div class="faq">
-          <details>
-            <summary>C’est de l’anxiété ou du stress ?</summary>
-            <p>Stress et anxiété peuvent se ressembler. Une première séance aide à repérer ce qui déclenche, ce qui maintient et comment cela s’exprime chez vous.</p>
-          </details>
-          <details>
-            <summary>Pourquoi j’ai des crises d’angoisse ?</summary>
-            <p>Elles peuvent survenir quand la tension interne dépasse un seuil, parfois sans cause immédiate visible. L’accompagnement vise à comprendre le contexte et à retrouver un sentiment de sécurité.</p>
-          </details>
-          <details>
-            <summary>Je rumine tout le temps, comment arrêter ?</summary>
-            <p>La rumination est souvent une tentative de contrôle ou de résolution. Comprendre son rôle et travailler sur ce qui la nourrit permet de l’apaiser progressivement.</p>
-          </details>
-          <details>
-            <summary>Est-ce que je vais rester comme ça ?</summary>
-            <p>Non. Avec un espace de compréhension et un rythme adapté, il est possible de retrouver de la stabilité et une relation plus apaisée à ses émotions.</p>
-          </details>
-        </div>
+        <div class="faq" data-faq data-faq-page="emotions"></div>
       </div>
     </section>
   </main>
