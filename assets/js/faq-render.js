@@ -16,11 +16,7 @@
   };
 
   const render = (container) => {
-    const pageKey = container.getAttribute("data-faq-page");
-    const specific = pageKey && data.specific[pageKey] ? data.specific[pageKey] : [];
-    const items = specific.concat(data.generic);
-
-    items.forEach((item) => {
+    data.generic.forEach((item) => {
       container.appendChild(makeDetails(item));
     });
   };
