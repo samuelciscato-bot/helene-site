@@ -10,7 +10,7 @@ window.FAQ_DATA = {
     },
     {
       q: "Psychologue ou psychiatre, quelle différence ?",
-      a: "Psychologue et psychiatre sont tous deux psychothérapeutes. Cependant, un psychologue, nécessairement titulaire d’un master 2 en psychologie, propose un accompagnement par la parole et la compréhension des vécus, alors qu’un psychiatre est un médecin, qui peut donc prescrire un traitement médicamenteux. Selon les situations, les deux approches peuvent être complémentaires."
+      a: "Psychologue et psychiatre sont tous·tes deux psychothérapeutes. Cependant, un.e psychologue, nécessairement titulaire d’un master 2 en psychologie, propose un accompagnement par la parole et la compréhension des vécus, alors qu’un.e psychiatre est un.e médecin, qui peut donc prescrire un traitement médicamenteux. Selon les situations, les deux approches peuvent être complémentaires."
     },
     {
       q: "Est-ce que l’accompagnement donne des ‘conseils’ ?",
@@ -34,7 +34,7 @@ window.FAQ_DATA = {
     },
     {
       q: "Les consultations psychologiques sont-elles remboursées par la Sécurité sociale ?",
-      a: "Non, les séances avec un psychologue ne sont pas remboursées par la Sécurité sociale. Elles restent donc à la charge du patient, avec un soutien possible de la part de la mutuelle selon les garanties du contrat."
+      a: "Non, les séances avec un.e psychologue ne sont pas remboursées par la Sécurité sociale. Elles restent donc à la charge du patient / de la patiente, avec un soutien possible de la part de la mutuelle selon les garanties du contrat."
     },
     {
       q: "Tout ce que je dis reste-t-il confidentiel ?",

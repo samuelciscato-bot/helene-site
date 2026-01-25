@@ -963,9 +963,9 @@ a:hover{ opacity: 0.92; }
   border-bottom: 1px solid var(--line);
 }
 .section--cta .btn--primary{
-  background: linear-gradient(140deg, var(--accent2), color-mix(in srgb, var(--accent2) 30%, var(--accent)));
+  background: linear-gradient(140deg, color-mix(in srgb, var(--accent2) 70%, #fff), color-mix(in srgb, var(--accent2) 40%, var(--accent)));
   color: #fff;
-  box-shadow: 0 12px 22px rgba(240,90,126,0.25);
+  box-shadow: 0 10px 18px rgba(240,90,126,0.18);
 }
 .section--cta .btn--primary:hover{ filter: brightness(0.98); }
 .section--cta .btn--primary:focus-visible{
@@ -994,7 +994,7 @@ a:hover{ opacity: 0.92; }
   top: 0;
   bottom: 0;
   width: 6px;
-  background: linear-gradient(180deg, var(--accent2), var(--accent3));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent2) 60%, #fff), color-mix(in srgb, var(--accent3) 70%, #fff));
 }
 .ctaBox__text{
   padding: 22px;
@@ -1021,6 +1021,12 @@ a:hover{ opacity: 0.92; }
   gap: 12px;
   flex-wrap: wrap;
   margin-top: 14px;
+}
+
+.section__actions{
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
 }
 
 .ctaBox__side{
@@ -1121,6 +1127,15 @@ a:hover{ opacity: 0.92; }
   font-size: 13px;
 }
 .footer__links a{ text-decoration: none; }
+.footer__actions{ display: inline-flex; align-items: center; }
+.footer__actions{ gap: 10px; }
+.footer__cta{ text-decoration: none; }
+.footer__cta--secondary{
+  background: color-mix(in srgb, var(--paper) 85%, var(--bg));
+  border: 1px solid var(--line);
+  box-shadow: none;
+  font-weight: 600;
+}
 .footer__cta{
   display: inline-flex;
   align-items: center;
@@ -1220,4 +1235,20 @@ a:hover{ opacity: 0.92; }
   .nav__item--open .nav__dropdown{ display: flex; }
   .nav__dropdown a{ text-align: center; }
   .parallax{ background-attachment: scroll; }
+}
+
+@media (max-width: 680px){
+  .footer__inner{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer__actions{ order: 0; }
+  .footer__links{ order: 1; }
+  .footer__copyright{ order: 2; }
+  .footer__actions{
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer__cta{ width: 100%; justify-content: center; }
 }
