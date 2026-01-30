@@ -20,8 +20,21 @@ exports.handler = async (event, context) => {
       return { statusCode: 400, body: "Invalid button ID" };
     }
 
-    const store = getStore("clicks");
-    let clickData = (await store.get("all-clicks", { type: "json" })) || {};
+    const siteID = process.env.SITE_ID || process.env.NETLIFY_SITE_ID;
+    const token = process.env.NETLIFY_BLOBS_TOKEN || process.env.BLOB_TOKEN;
+
+    const store = getStore({
+      name: "clicks",
+      siteID: siteID,
+      token: token
+    });
+
+    let clickData = {};
+    try {
+      clickData = (await store.get("all-clicks", { type: "json" })) || {};
+    } catch (e) {
+      clickData = {};
+    }
 
     if (!clickData[buttonId]) {
       clickData[buttonId] = [];
@@ -38,6 +51,6 @@ exports.handler = async (event, context) => {
     return { statusCode: 200, body: "OK" };
   } catch (error) {
     console.error("Track click error:", error);
-    return { statusCode: 500, body: "Server error" };
+    return { statusCode: 500, body: "Server error: " + error.message };
   }
 };
