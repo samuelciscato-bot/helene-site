@@ -1,13 +1,15 @@
-import { getStore } from "@netlify/blobs";
-import crypto from "crypto";
+const { getStore } = require("@netlify/blobs");
+const crypto = require("crypto");
 
 function verifyToken(token) {
-  const storedPassword = Netlify.env.get("DASHBOARD_PASSWORD");
+  const storedPassword = process.env.DASHBOARD_PASSWORD;
   if (!storedPassword || !token) return false;
 
   const now = Date.now();
+  const oneHourMs = 60 * 60 * 1000;
+
   for (let h = 0; h < 25; h++) {
-    const expires = Math.floor((now + h * 60 * 60 * 1000) / (60 * 60 * 1000)) * (60 * 60 * 1000);
+    const expires = Math.floor((now + h * oneHourMs) / oneHourMs) * oneHourMs;
     const tokenData = `${expires}:${storedPassword}`;
     const expectedToken = crypto.createHash("sha256").update(tokenData).digest("hex");
     if (token === expectedToken) return true;
@@ -16,16 +18,20 @@ function verifyToken(token) {
   return false;
 }
 
-export default async (req, context) => {
-  if (req.method !== "GET") {
-    return new Response("Method not allowed", { status: 405 });
+exports.handler = async (event, context) => {
+  if (event.httpMethod !== "GET") {
+    return { statusCode: 405, body: "Method not allowed" };
   }
 
-  const authHeader = req.headers.get("Authorization");
+  const authHeader = event.headers.authorization || event.headers.Authorization;
   const token = authHeader?.replace("Bearer ", "");
 
   if (!verifyToken(token)) {
-    return Response.json({ error: "Non autorise" }, { status: 401 });
+    return {
+      statusCode: 401,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ error: "Non autorise" })
+    };
   }
 
   try {
@@ -65,17 +71,17 @@ export default async (req, context) => {
       }
     }
 
-    return Response.json({
-      totalClicks: Object.values(clickData).reduce((sum, arr) => sum + arr.length, 0),
-      buttons: summary,
-      lastUpdated: new Date().toISOString()
-    });
+    return {
+      statusCode: 200,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        totalClicks: Object.values(clickData).reduce((sum, arr) => sum + arr.length, 0),
+        buttons: summary,
+        lastUpdated: new Date().toISOString()
+      })
+    };
   } catch (error) {
     console.error("Get stats error:", error);
-    return new Response("Server error", { status: 500 });
+    return { statusCode: 500, body: "Server error" };
   }
-};
-
-export const config = {
-  path: "/.netlify/functions/get-stats"
 };
