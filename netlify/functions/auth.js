@@ -14,7 +14,8 @@ export default async (req, context) => {
     }
 
     if (password === storedPassword) {
-      const expires = Date.now() + 24 * 60 * 60 * 1000;
+      const oneHourMs = 60 * 60 * 1000;
+      const expires = Math.floor((Date.now() + 24 * oneHourMs) / oneHourMs) * oneHourMs;
       const tokenData = `${expires}:${storedPassword}`;
       const token = crypto.createHash("sha256").update(tokenData).digest("hex");
 
