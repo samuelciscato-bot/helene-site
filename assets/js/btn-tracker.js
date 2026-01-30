@@ -14,15 +14,16 @@
         referrer: document.referrer || null
       };
 
+      var jsonString = JSON.stringify(data);
+      var blob = new Blob([jsonString], { type: "application/json" });
+
       if (navigator.sendBeacon) {
-        navigator.sendBeacon(
-          "/.netlify/functions/track-click",
-          JSON.stringify(data)
-        );
+        navigator.sendBeacon("/.netlify/functions/track-click", blob);
       } else {
         fetch("/.netlify/functions/track-click", {
           method: "POST",
-          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+          body: jsonString,
           keepalive: true
         }).catch(function () {});
       }
