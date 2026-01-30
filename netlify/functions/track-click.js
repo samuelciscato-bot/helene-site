@@ -1,12 +1,12 @@
-import { getStore } from "@netlify/blobs";
+const { getStore } = require("@netlify/blobs");
 
-export default async (req, context) => {
-  if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+exports.handler = async (event, context) => {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method not allowed" };
   }
 
   try {
-    const body = await req.json();
+    const body = JSON.parse(event.body);
     const { buttonId, timestamp, page, referrer } = body;
 
     const allowedIds = [
@@ -17,11 +17,11 @@ export default async (req, context) => {
     ];
 
     if (!allowedIds.includes(buttonId)) {
-      return new Response("Invalid button ID", { status: 400 });
+      return { statusCode: 400, body: "Invalid button ID" };
     }
 
     const store = getStore("clicks");
-    let clickData = await store.get("all-clicks", { type: "json" }) || {};
+    let clickData = (await store.get("all-clicks", { type: "json" })) || {};
 
     if (!clickData[buttonId]) {
       clickData[buttonId] = [];
@@ -35,13 +35,9 @@ export default async (req, context) => {
 
     await store.setJSON("all-clicks", clickData);
 
-    return new Response("OK", { status: 200 });
+    return { statusCode: 200, body: "OK" };
   } catch (error) {
     console.error("Track click error:", error);
-    return new Response("Server error", { status: 500 });
+    return { statusCode: 500, body: "Server error" };
   }
-};
-
-export const config = {
-  path: "/.netlify/functions/track-click"
 };

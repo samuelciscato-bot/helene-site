@@ -1,16 +1,16 @@
-import crypto from "crypto";
+const crypto = require("crypto");
 
-export default async (req, context) => {
-  if (req.method !== "POST") {
-    return new Response("Method not allowed", { status: 405 });
+exports.handler = async (event, context) => {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method not allowed" };
   }
 
   try {
-    const { password } = await req.json();
-    const storedPassword = Netlify.env.get("DASHBOARD_PASSWORD");
+    const { password } = JSON.parse(event.body);
+    const storedPassword = process.env.DASHBOARD_PASSWORD;
 
     if (!storedPassword) {
-      return new Response("Server configuration error", { status: 500 });
+      return { statusCode: 500, body: "Server configuration error" };
     }
 
     if (password === storedPassword) {
@@ -19,23 +19,20 @@ export default async (req, context) => {
       const tokenData = `${expires}:${storedPassword}`;
       const token = crypto.createHash("sha256").update(tokenData).digest("hex");
 
-      return Response.json({
-        success: true,
-        token: token,
-        expires: expires
-      });
+      return {
+        statusCode: 200,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ success: true, token, expires })
+      };
     } else {
-      return Response.json(
-        { success: false, message: "Mot de passe incorrect" },
-        { status: 401 }
-      );
+      return {
+        statusCode: 401,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ success: false, message: "Mot de passe incorrect" })
+      };
     }
   } catch (error) {
     console.error("Auth error:", error);
-    return new Response("Server error", { status: 500 });
+    return { statusCode: 500, body: "Server error" };
   }
-};
-
-export const config = {
-  path: "/.netlify/functions/auth"
 };
