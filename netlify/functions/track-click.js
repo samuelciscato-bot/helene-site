@@ -20,7 +20,7 @@ exports.handler = async (event, context) => {
       return { statusCode: 400, body: "Invalid button ID" };
     }
 
-    const siteID = process.env.SITE_ID || process.env.NETLIFY_SITE_ID;
+    const siteID = process.env.MY_SITE_ID;
     const token = process.env.NETLIFY_BLOBS_TOKEN || process.env.BLOB_TOKEN;
 
     const store = getStore({

@@ -35,7 +35,7 @@ exports.handler = async (event, context) => {
   }
 
   try {
-    const siteID = process.env.SITE_ID || process.env.NETLIFY_SITE_ID;
+    const siteID = process.env.MY_SITE_ID;
     const blobToken = process.env.NETLIFY_BLOBS_TOKEN || process.env.BLOB_TOKEN;
 
     const store = getStore({
