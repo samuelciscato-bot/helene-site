@@ -108,6 +108,7 @@
   class="nav__cta"
   target="_blank"
   rel="noopener"
+  data-track-btn="HP-H"
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -136,8 +137,9 @@
   class="btn btn--primary btn--irise"
   href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
   target="_blank"
-  rel="noopener">
-Prendre rendez-vous</a>
+  rel="noopener"
+  data-track-btn="HP-C"
+>Prendre rendez-vous</a>
             <a class="btn btn--ghost" href="#contact">Me contacter</a>
           </div>
 
@@ -369,9 +371,9 @@ Prendre rendez-vous</a>
   class="btn btn--primary"
   href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris"
   target="_blank"
-  rel="noopener">
-  Réserver un créneau
-</a>
+  rel="noopener"
+  data-track-btn="HP-R"
+>Réserver un créneau</a>
 
               <!-- Enlever la classe hidden pour activer Doctolib -->
               <a class="btn btn--secondary doctolib-btn hidden" href="https://www.doctolib.fr/" target="_blank" rel="noopener">Prendre rendez-vous sur Doctolib</a>
@@ -467,7 +469,7 @@ Prendre rendez-vous</a>
       <p class="footer__copyright">© <span id="year"></span> Hélène Nguyen | Psychologue clinicienne</p>
       <p class="footer__actions">
         <a class="footer__cta footer__cta--secondary" href="index.html#contact">Envoyer un message</a>
-        <a class="footer__cta" href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris" target="_blank" rel="noopener">PRENDRE RENDEZ-VOUS</a>
+        <a class="footer__cta" href="https://www.doctolib.fr/psychologue/paris/helene-nguyen-paris" target="_blank" rel="noopener" data-track-btn="HP-F">PRENDRE RENDEZ-VOUS</a>
       </p>
     </div>
   </footer>
@@ -512,7 +514,6 @@ Prendre rendez-vous</a>
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
   </script>
-
-
+  <script defer src="assets/js/btn-tracker.js"></script>
 </body>
 </html>

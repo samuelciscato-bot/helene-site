@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de bord - Statistiques boutons</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="assets/icons/coeur-calme.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { background: var(--bg); min-height: 100vh; }
+    .dashboard { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    .dashboard h1 { font-family: var(--serif); margin-bottom: 8px; }
+    .dashboard .subtitle { color: var(--muted); margin-bottom: 32px; }
+
+    .login-form {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 32px;
+      background: var(--paper);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .login-form h2 { margin: 0 0 8px; font-family: var(--serif); }
+    .login-form p { color: var(--muted); margin: 0 0 24px; font-size: 14px; }
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      margin-bottom: 16px;
+      font: inherit;
+      transition: border-color 0.2s;
+    }
+    .login-form input[type="password"]:focus {
+      outline: none;
+      border-color: var(--accent2);
+    }
+    .login-form button { width: 100%; }
+    .error { color: #c00; margin-top: 12px; font-size: 14px; }
+
+    .stats-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+    .stat-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-card .number {
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--accent2);
+      font-family: var(--serif);
+    }
+    .stat-card .label { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      margin: 32px 0 8px;
+    }
+    .section-desc { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+
+    .button-list { display: flex; flex-direction: column; gap: 8px; }
+    .button-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .button-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+    .button-header {
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 12px;
+    }
+    .button-header:hover { background: rgba(0,0,0,0.01); }
+    .button-info { flex: 1; }
+    .button-name { font-weight: 600; font-size: 15px; }
+    .button-id { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .button-count {
+      background: var(--accent3);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
+    .button-count--zero { background: var(--line); color: var(--muted); }
+
+    .button-details {
+      display: none;
+      border-top: 1px solid var(--line);
+      padding: 16px 20px;
+      background: color-mix(in srgb, var(--paper) 50%, var(--bg));
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .button-item.open .button-details { display: block; }
+    .button-item.open .button-header { background: rgba(0,0,0,0.02); }
+
+    .click-entry {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line);
+      font-size: 14px;
+      color: var(--text);
+      display: flex;
+      gap: 12px;
+    }
+    .click-entry:last-child { border-bottom: none; }
+    .click-date { color: var(--muted); min-width: 90px; }
+    .click-time { font-weight: 500; min-width: 70px; }
+    .click-page { color: var(--muted); font-size: 13px; }
+
+    .no-clicks { color: var(--muted); font-style: italic; padding: 8px 0; }
+
+    .logout-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .logout-btn:hover { background: var(--bg); }
+
+    .hidden { display: none !important; }
+
+    .refresh-btn {
+      background: none;
+      border: 1px solid var(--line);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .refresh-btn:hover { background: var(--paper); }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .header-row h1 { margin: 0; }
+
+    @media (max-width: 600px) {
+      .stats-summary { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .stat-card { padding: 12px 8px; }
+      .stat-card .number { font-size: 24px; }
+      .stat-card .label { font-size: 11px; }
+      .button-header { padding: 12px 16px; }
+      .click-entry { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="login-section" class="login-form">
+    <h2>Connexion</h2>
+    <p>Entrez le mot de passe pour acceder aux statistiques.</p>
+    <form id="login-form">
+      <input type="password" id="password" placeholder="Mot de passe" required autocomplete="current-password" />
+      <button type="submit" class="btn btn--primary">Se connecter</button>
+    </form>
+    <p id="login-error" class="error hidden"></p>
+  </div>
+
+  <div id="dashboard-section" class="dashboard hidden">
+    <button id="logout-btn" class="logout-btn">Deconnexion</button>
+
+    <div class="header-row">
+      <h1>Statistiques des boutons RDV</h1>
+      <button id="refresh-btn" class="refresh-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M23 4v6h-6M1 20v-6h6"/>
+          <path d="M3.51 9a9 9 0 0114.36-3.36L23 10M1 14l5.13 4.36A9 9 0 0020.49 15"/>
+        </svg>
+        Actualiser
+      </button>
+    </div>
+    <p class="subtitle">Suivi des clics sur les boutons "Prendre rendez-vous"</p>
+
+    <div class="stats-summary">
+      <div class="stat-card">
+        <div id="total-clicks" class="number">-</div>
+        <div class="label">Total clics</div>
+      </div>
+      <div class="stat-card">
+        <div id="today-clicks" class="number">-</div>
+        <div class="label">Aujourd'hui</div>
+      </div>
+      <div class="stat-card">
+        <div id="week-clicks" class="number">-</div>
+        <div class="label">Cette semaine</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Details par bouton</h2>
+    <p class="section-desc">Cliquez sur un bouton pour voir l'historique des clics.</p>
+    <div id="button-list" class="button-list"></div>
+
+    <p id="last-updated" class="muted" style="margin-top: 24px; font-size: 13px;"></p>
+  </div>
+
+  <script>
+    (function() {
+      var loginSection = document.getElementById("login-section");
+      var dashboardSection = document.getElementById("dashboard-section");
+      var loginForm = document.getElementById("login-form");
+      var loginError = document.getElementById("login-error");
+      var logoutBtn = document.getElementById("logout-btn");
+      var refreshBtn = document.getElementById("refresh-btn");
+
+      var token = sessionStorage.getItem("dashboardToken");
+      var expires = sessionStorage.getItem("dashboardExpires");
+
+      if (token && expires && Date.now() < parseInt(expires)) {
+        showDashboard();
+      }
+
+      loginForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        var password = document.getElementById("password").value;
+
+        fetch("/.netlify/functions/auth", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ password: password })
+        })
+        .then(function(response) { return response.json(); })
+        .then(function(data) {
+          if (data.success) {
+            sessionStorage.setItem("dashboardToken", data.token);
+            sessionStorage.setItem("dashboardExpires", data.expires);
+            showDashboard();
+          } else {
+            loginError.textContent = data.message || "Erreur de connexion";
+            loginError.classList.remove("hidden");
+          }
+        })
+        .catch(function() {
+          loginError.textContent = "Erreur de connexion au serveur";
+          loginError.classList.remove("hidden");
+        });
+      });
+
+      logoutBtn.addEventListener("click", function() {
+        sessionStorage.removeItem("dashboardToken");
+        sessionStorage.removeItem("dashboardExpires");
+        loginSection.classList.remove("hidden");
+        dashboardSection.classList.add("hidden");
+        loginError.classList.add("hidden");
+        document.getElementById("password").value = "";
+      });
+
+      refreshBtn.addEventListener("click", function() {
+        loadStats();
+      });
+
+      function showDashboard() {
+        loginSection.classList.add("hidden");
+        dashboardSection.classList.remove("hidden");
+        loadStats();
+      }
+
+      function loadStats() {
+        var token = sessionStorage.getItem("dashboardToken");
+
+        fetch("/.netlify/functions/get-stats", {
+          headers: { "Authorization": "Bearer " + token }
+        })
+        .then(function(response) {
+          if (response.status === 401) {
+            sessionStorage.removeItem("dashboardToken");
+            sessionStorage.removeItem("dashboardExpires");
+            loginSection.classList.remove("hidden");
+            dashboardSection.classList.add("hidden");
+            throw new Error("Non autorise");
+          }
+          return response.json();
+        })
+        .then(function(data) {
+          renderStats(data);
+        })
+        .catch(function(err) {
+          if (err.message !== "Non autorise") {
+            console.error("Failed to load stats:", err);
+          }
+        });
+      }
+
+      function renderStats(data) {
+        document.getElementById("total-clicks").textContent = data.totalClicks;
+
+        var now = new Date();
+        var todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+        var dayOfWeek = now.getDay();
+        var mondayOffset = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+        var weekStart = todayStart - (mondayOffset * 24 * 60 * 60 * 1000);
+
+        var todayCount = 0;
+        var weekCount = 0;
+
+        Object.values(data.buttons).forEach(function(button) {
+          button.clicks.forEach(function(click) {
+            var clickTime = new Date(click.timestamp).getTime();
+            if (clickTime >= todayStart) todayCount++;
+            if (clickTime >= weekStart) weekCount++;
+          });
+        });
+
+        document.getElementById("today-clicks").textContent = todayCount;
+        document.getElementById("week-clicks").textContent = weekCount;
+
+        var buttonList = document.getElementById("button-list");
+        buttonList.innerHTML = "";
+
+        var sortedButtons = Object.entries(data.buttons)
+          .sort(function(a, b) { return b[1].count - a[1].count; });
+
+        sortedButtons.forEach(function(entry) {
+          var id = entry[0];
+          var button = entry[1];
+
+          var item = document.createElement("div");
+          item.className = "button-item";
+
+          var header = document.createElement("div");
+          header.className = "button-header";
+
+          var info = document.createElement("div");
+          info.className = "button-info";
+          info.innerHTML = '<div class="button-name">' + button.label + '</div>' +
+                          '<div class="button-id">Code: ' + id + '</div>';
+
+          var count = document.createElement("span");
+          count.className = "button-count" + (button.count === 0 ? " button-count--zero" : "");
+          count.textContent = button.count + " clic" + (button.count > 1 ? "s" : "");
+
+          header.appendChild(info);
+          header.appendChild(count);
+
+          header.addEventListener("click", function() {
+            item.classList.toggle("open");
+          });
+
+          var details = document.createElement("div");
+          details.className = "button-details";
+
+          if (button.clicks.length === 0) {
+            details.innerHTML = '<p class="no-clicks">Aucun clic enregistre</p>';
+          } else {
+            button.clicks.slice(0, 100).forEach(function(click) {
+              var entry = document.createElement("div");
+              entry.className = "click-entry";
+              var date = new Date(click.timestamp);
+
+              var dateStr = date.toLocaleDateString("fr-FR", { day: "2-digit", month: "short" });
+              var timeStr = date.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
+
+              entry.innerHTML = '<span class="click-date">' + dateStr + '</span>' +
+                               '<span class="click-time">' + timeStr + '</span>';
+
+              if (click.page && click.page !== "/") {
+                var pageName = click.page.replace(/^\//, "").replace(/\.html$/, "");
+                entry.innerHTML += '<span class="click-page">' + pageName + '</span>';
+              }
+
+              details.appendChild(entry);
+            });
+
+            if (button.clicks.length > 100) {
+              var more = document.createElement("p");
+              more.className = "no-clicks";
+              more.textContent = "... et " + (button.clicks.length - 100) + " autres clics";
+              details.appendChild(more);
+            }
+          }
+
+          item.appendChild(header);
+          item.appendChild(details);
+          buttonList.appendChild(item);
+        });
+
+        var lastUpdated = document.getElementById("last-updated");
+        var updateDate = new Date(data.lastUpdated);
+        lastUpdated.textContent = "Derniere mise a jour: " + updateDate.toLocaleString("fr-FR");
+      }
+    })();
+  </script>
+</body>
+</html>
