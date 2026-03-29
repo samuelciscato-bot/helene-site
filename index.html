@@ -71,7 +71,9 @@
     ]
   }
   </script>
-  <!-- Calendly embed script and styles -->
+  <!-- Calendly popup widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 </head>
 
@@ -104,10 +106,10 @@
         </div>
         <a href="index.html#modalites">Modalités</a>
         <a
-  href="https://calendly.com/helenenguyen-psychologue"
+  href=""
   class="nav__cta"
-  target="_blank"
-  rel="noopener"
+  role="button"
+  data-calendly
   data-track-btn="HP-H"
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
@@ -138,9 +140,9 @@
           <div class="hero__actions">
           <a
   class="btn btn--primary btn--irise"
-  href="https://calendly.com/helenenguyen-psychologue"
-  target="_blank"
-  rel="noopener"
+  href=""
+  role="button"
+  data-calendly
   data-track-btn="HP-C"
 >Prendre rendez-vous</a>
             <a class="btn btn--ghost" href="#contact">Me contacter</a>
@@ -372,9 +374,9 @@
               <!-- Option : ajouter deux liens Calendly distincts (1re consult / suivi) quand les URLs seront créées. -->
               <a
   class="btn btn--primary"
-  href="https://calendly.com/helenenguyen-psychologue"
-  target="_blank"
-  rel="noopener"
+  href=""
+  role="button"
+  data-calendly
   data-track-btn="HP-R"
 >Réserver un créneau</a>
 
@@ -382,15 +384,6 @@
               <a class="btn btn--ghost" href="#contact">Écrire un message</a>
             </div>
 
-            <!-- Option embed (si tu veux intégrer un calendrier directement)
-            <div class="embed">
-              <iframe
-                src="https://calendly.com/helenenguyen-psychologue"
-                title="Calendrier de réservation"
-                frameborder="0"
-              ></iframe>
-            </div>
-            -->
           </div>
 
           <div class="ctaBox__side">
@@ -471,7 +464,7 @@
       <p class="footer__copyright">© <span id="year"></span> Hélène Nguyen | Psychologue clinicienne</p>
       <p class="footer__actions">
         <a class="footer__cta footer__cta--secondary" href="index.html#contact">Envoyer un message</a>
-        <a class="footer__cta" href="https://calendly.com/helenenguyen-psychologue" target="_blank" rel="noopener" data-track-btn="HP-F">PRENDRE RENDEZ-VOUS</a>
+        <a class="footer__cta" href="" role="button" data-calendly data-track-btn="HP-F">PRENDRE RENDEZ-VOUS</a>
       </p>
     </div>
   </footer>
@@ -515,6 +508,19 @@
       });
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
+  </script>
+  <script>
+    // Calendly popup — ouvre la pop-in au clic sur tout élément [data-calendly]
+    document.addEventListener("click", function (e) {
+      var trigger = e.target.closest("[data-calendly]");
+      if (!trigger) return;
+      e.preventDefault();
+      if (typeof Calendly !== "undefined") {
+        Calendly.initPopupWidget({
+          url: "https://calendly.com/helenenguyen-psychologue/consultation-helene-nguyen?back=1"
+        });
+      }
+    });
   </script>
   <script defer src="assets/js/btn-tracker.js"></script>
 </body>

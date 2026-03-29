@@ -45,6 +45,9 @@
     ]
   }
   </script>
+  <!-- Calendly popup widget -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
   <header class="header">
@@ -73,10 +76,10 @@
         </div>
         <a href="index.html#modalites">Modalités</a>
         <a
-  href="https://calendly.com/helenenguyen-psychologue"
+  href=""
   class="nav__cta"
-  target="_blank"
-  rel="noopener"
+  role="button"
+  data-calendly
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -148,6 +151,18 @@
     });
       });
     }
+  </script>
+  <script>
+    document.addEventListener("click", function (e) {
+      var trigger = e.target.closest("[data-calendly]");
+      if (!trigger) return;
+      e.preventDefault();
+      if (typeof Calendly !== "undefined") {
+        Calendly.initPopupWidget({
+          url: "https://calendly.com/helenenguyen-psychologue/consultation-helene-nguyen?back=1"
+        });
+      }
+    });
   </script>
 </body>
 </html>
