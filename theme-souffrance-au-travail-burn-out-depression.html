@@ -56,9 +56,6 @@
     ]
   }
   </script>
-  <!-- Calendly popup widget -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 
 <body class="themePage themePage--work">
@@ -90,10 +87,9 @@
         </div>
         <a href="index.html#modalites">Modalités</a>
         <a
-  href=""
+  href="index.html#contact"
   class="nav__cta"
   role="button"
-  data-calendly
   data-track-btn="MC1-H"
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
@@ -175,7 +171,7 @@
       <p class="footer__copyright">© <span id="year"></span> Hélène Nguyen | Psychologue clinicienne</p>
       <p class="footer__actions">
         <a class="footer__cta footer__cta--secondary" href="index.html#contact">Envoyer un message</a>
-        <a class="footer__cta" href="" role="button" data-calendly data-track-btn="MC1-F">PRENDRE RENDEZ-VOUS</a>
+        <a class="footer__cta" href="index.html#contact" role="button" data-track-btn="MC1-F">PRENDRE RENDEZ-VOUS</a>
       </p>
     </div>
   </footer>
@@ -218,17 +214,5 @@
     els.forEach(el => io.observe(el));
   </script>
   <script defer src="assets/js/btn-tracker.js"></script>
-  <script>
-    document.addEventListener("click", function (e) {
-      var trigger = e.target.closest("[data-calendly]");
-      if (!trigger) return;
-      e.preventDefault();
-      if (typeof Calendly !== "undefined") {
-        Calendly.initPopupWidget({
-          url: "https://calendly.com/helenenguyen-psychologue/consultation-helene-nguyen?back=1"
-        });
-      }
-    });
-  </script>
 </body>
 </html>

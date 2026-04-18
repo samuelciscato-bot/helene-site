@@ -45,9 +45,6 @@
     ]
   }
   </script>
-  <!-- Calendly popup widget -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </head>
 <body>
   <header class="header">
@@ -76,10 +73,9 @@
         </div>
         <a href="index.html#modalites">Modalités</a>
         <a
-  href=""
+  href="index.html#contact"
   class="nav__cta"
   role="button"
-  data-calendly
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
       </nav>
@@ -102,8 +98,8 @@
 
         <h3>2. Prise de rendez-vous</h3>
         <p>
-          La prise de rendez-vous se fait via un lien externe (Calendly). Les informations collectées
-          et leur durée de conservation dépendent de ce service tiers.
+          La prise de rendez-vous se fait directement par échange de messages via le formulaire
+          de contact ou par email. Aucun service tiers de réservation n’est utilisé.
         </p>
 
         <h3>3. Mesure d’audience</h3>
@@ -148,18 +144,6 @@
     });
       });
     }
-  </script>
-  <script>
-    document.addEventListener("click", function (e) {
-      var trigger = e.target.closest("[data-calendly]");
-      if (!trigger) return;
-      e.preventDefault();
-      if (typeof Calendly !== "undefined") {
-        Calendly.initPopupWidget({
-          url: "https://calendly.com/helenenguyen-psychologue/consultation-helene-nguyen?back=1"
-        });
-      }
-    });
   </script>
 </body>
 </html>

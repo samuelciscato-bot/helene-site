@@ -71,10 +71,6 @@
     ]
   }
   </script>
-  <!-- Calendly popup widget -->
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
 </head>
 
 <body>
@@ -106,10 +102,9 @@
         </div>
         <a href="index.html#modalites">Modalités</a>
         <a
-  href=""
+  href="#contact"
   class="nav__cta"
   role="button"
-  data-calendly
   data-track-btn="HP-H"
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
@@ -127,7 +122,7 @@
             Psychologue clinicienne et psychothérapeute, je suis également doctorante spécialisée en santé mentale au travail et reçois en consultation des patients en souffrance au travail au sein du Service de Pathologies Professionnelles du Centre Hospitalier Intercommunal de Créteil.
           </p>
           <p class="lead">
-            Passionnée par mon métier, j’accueille adultes et jeunes adultes dans mon cabinet ou en visioconférence, dans un cadre bienveillant où la parole est libre et sans jugement.
+            Passionnée par mon métier, j’accueille adultes et jeunes adultes dans mon cabinet ou en visioconférence, dans un cadre bienveillant où la parole est libre, sans jugement et protégée par le secret professionnel.
           </p>
           <p class="lead">
             J’accompagne les personnes qui traversent un mal-être au travail : stress, surcharge, burn-out,
@@ -140,9 +135,8 @@
           <div class="hero__actions">
           <a
   class="btn btn--primary btn--irise"
-  href=""
+  href="#contact"
   role="button"
-  data-calendly
   data-track-btn="HP-C"
 >Prendre rendez-vous</a>
             <a class="btn btn--ghost" href="#contact">Me contacter</a>
@@ -337,13 +331,6 @@
             <p><span class="infoTag">MAPS</span> <a href="https://www.google.com/maps/search/?api=1&query=133%20rue%20de%20S%C3%A8vres%2C%2075006%20Paris" target="_blank" rel="noopener">Localiser sur Maps</a></p>
           </article>
 
-          <article class="infoCard reveal">
-            <img src="assets/icons/visio.svg" alt="" />
-            <h3>Visio</h3>
-            <p class="muted">(sur rendez-vous)</p>
-            <p><strong>Lien Teams envoyé après la confirmation du rendez-vous.</strong></p>
-          </article>
-
           <article class="infoCard infoCard--tight reveal">
             <img src="assets/icons/calendrier.svg" alt="" />
             <h3>Honoraires et séances</h3>
@@ -363,25 +350,18 @@
       <div class="wrap reveal">
         <div class="ctaBox ctaBox--focus">
           <div class="ctaBox__text">
-            <span class="ctaTag">Réservation en ligne</span>
             <h2>Prendre rendez-vous</h2>
             <p class="sublead">
-              Cliquez ci-dessous pour réserver un créneau.<br />Sinon, vous pouvez aussi écrire un message.
+              Pour prendre rendez-vous ou demander une information complémentaire, vous pouvez écrire un message.
             </p>
 
-            <!-- IMPORTANT : remplace TON-LIEN par le vrai lien Calendly / autre -->
             <div class="ctaBox__actions">
-              <!-- Option : ajouter deux liens Calendly distincts (1re consult / suivi) quand les URLs seront créées. -->
               <a
   class="btn btn--primary"
-  href=""
+  href="#contact"
   role="button"
-  data-calendly
   data-track-btn="HP-R"
->Réserver un créneau</a>
-
-
-              <a class="btn btn--ghost" href="#contact">Écrire un message</a>
+>Écrire un message</a>
             </div>
 
           </div>
@@ -464,7 +444,7 @@
       <p class="footer__copyright">© <span id="year"></span> Hélène Nguyen | Psychologue clinicienne</p>
       <p class="footer__actions">
         <a class="footer__cta footer__cta--secondary" href="index.html#contact">Envoyer un message</a>
-        <a class="footer__cta" href="" role="button" data-calendly data-track-btn="HP-F">PRENDRE RENDEZ-VOUS</a>
+        <a class="footer__cta" href="#contact" role="button" data-track-btn="HP-F">PRENDRE RENDEZ-VOUS</a>
       </p>
     </div>
   </footer>
@@ -508,19 +488,6 @@
       });
     }, { threshold: 0.12 });
     els.forEach(el => io.observe(el));
-  </script>
-  <script>
-    // Calendly popup — ouvre la pop-in au clic sur tout élément [data-calendly]
-    document.addEventListener("click", function (e) {
-      var trigger = e.target.closest("[data-calendly]");
-      if (!trigger) return;
-      e.preventDefault();
-      if (typeof Calendly !== "undefined") {
-        Calendly.initPopupWidget({
-          url: "https://calendly.com/helenenguyen-psychologue/consultation-helene-nguyen?back=1"
-        });
-      }
-    });
   </script>
   <script defer src="assets/js/btn-tracker.js"></script>
 </body>
