@@ -9,7 +9,6 @@
     "Voici mes préférences :",
     "- Jour souhaité : ",
     "- Créneau horaire : ",
-    "- Format (cabinet ou visio) : ",
     "- Motif bref : ",
     "",
     "Cordialement,",
