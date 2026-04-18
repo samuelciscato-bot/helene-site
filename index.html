@@ -102,9 +102,10 @@
         </div>
         <a href="index.html#modalites">Modalités</a>
         <a
-  href="#contact"
+  href="mailto:helenenguyen.psychologue@gmail.com"
   class="nav__cta"
   role="button"
+  data-mailto-rdv
   data-track-btn="HP-H"
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
@@ -135,8 +136,9 @@
           <div class="hero__actions">
           <a
   class="btn btn--primary btn--irise"
-  href="#contact"
+  href="mailto:helenenguyen.psychologue@gmail.com"
   role="button"
+  data-mailto-rdv
   data-track-btn="HP-C"
 >Prendre rendez-vous</a>
             <a class="btn btn--ghost" href="#contact">Me contacter</a>
@@ -358,10 +360,11 @@
             <div class="ctaBox__actions">
               <a
   class="btn btn--primary"
-  href="#contact"
+  href="mailto:helenenguyen.psychologue@gmail.com"
   role="button"
+  data-mailto-rdv
   data-track-btn="HP-R"
->Écrire un message</a>
+>Réserver un créneau</a>
             </div>
 
           </div>
@@ -392,43 +395,11 @@
           <p class="sublead">Pour toute question, n’hésitez pas à m’écrire :</p>
         </div>
 
-        <div class="contactGrid">
-          <div class="contactCard reveal">
-            <h3>Coordonnées</h3>
-            <p><strong>Email :</strong> <a href="mailto:helenenguyen.psychologue@gmail.com">helenenguyen.psychologue@gmail.com</a></p>
-            <p class="muted">
-              En cas d’urgence, appelez le 15.
-            </p>
-          </div>
-
-          <form class="form reveal" name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact" />
-            <label>
-              Nom
-              <input name="nom" type="text" autocomplete="name" required />
-            </label>
-            <label>
-              Prénom
-              <input name="prenom" type="text" autocomplete="given-name" required />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" required autocomplete="email" />
-            </label>
-            <label>
-              Téléphone
-              <input name="telephone" type="tel" autocomplete="tel" required />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows="5" required></textarea>
-            </label>
-            <label class="check">
-              <input type="checkbox" required />
-              <span>J’accepte que mon message soit utilisé uniquement pour me recontacter.</span>
-            </label>
-            <button class="btn btn--primary" type="submit">Envoyer</button>
-          </form>
+        <div class="contactCard reveal">
+          <p><strong>Email :</strong> <a href="mailto:helenenguyen.psychologue@gmail.com">helenenguyen.psychologue@gmail.com</a></p>
+          <p class="muted">
+            En cas d’urgence, appelez le 15.
+          </p>
         </div>
       </div>
     </section>
@@ -443,8 +414,8 @@
       </p>
       <p class="footer__copyright">© <span id="year"></span> Hélène Nguyen | Psychologue clinicienne</p>
       <p class="footer__actions">
-        <a class="footer__cta footer__cta--secondary" href="index.html#contact">Envoyer un message</a>
-        <a class="footer__cta" href="#contact" role="button" data-track-btn="HP-F">PRENDRE RENDEZ-VOUS</a>
+        <a class="footer__cta footer__cta--secondary" href="mailto:helenenguyen.psychologue@gmail.com" data-mailto-rdv>Envoyer un message</a>
+        <a class="footer__cta" href="mailto:helenenguyen.psychologue@gmail.com" role="button" data-mailto-rdv data-track-btn="HP-F">PRENDRE RENDEZ-VOUS</a>
       </p>
     </div>
   </footer>
@@ -490,5 +461,6 @@
     els.forEach(el => io.observe(el));
   </script>
   <script defer src="assets/js/btn-tracker.js"></script>
+  <script defer src="assets/js/mailto-rdv.js"></script>
 </body>
 </html>

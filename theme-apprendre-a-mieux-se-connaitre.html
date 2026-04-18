@@ -87,9 +87,10 @@
         </div>
         <a href="index.html#modalites">Modalités</a>
         <a
-  href="index.html#contact"
+  href="mailto:helenenguyen.psychologue@gmail.com"
   class="nav__cta"
   role="button"
+  data-mailto-rdv
   data-track-btn="MC5-H"
 >Prendre rendez-vous</a>
         <a href="index.html#contact">Contact</a>
@@ -165,8 +166,8 @@
       </p>
       <p class="footer__copyright">© <span id="year"></span> Hélène Nguyen | Psychologue clinicienne</p>
       <p class="footer__actions">
-        <a class="footer__cta footer__cta--secondary" href="index.html#contact">Envoyer un message</a>
-        <a class="footer__cta" href="index.html#contact" role="button" data-track-btn="MC5-F">PRENDRE RENDEZ-VOUS</a>
+        <a class="footer__cta footer__cta--secondary" href="mailto:helenenguyen.psychologue@gmail.com" data-mailto-rdv>Envoyer un message</a>
+        <a class="footer__cta" href="mailto:helenenguyen.psychologue@gmail.com" role="button" data-mailto-rdv data-track-btn="MC5-F">PRENDRE RENDEZ-VOUS</a>
       </p>
     </div>
   </footer>
@@ -209,5 +210,6 @@
     els.forEach(el => io.observe(el));
   </script>
   <script defer src="assets/js/btn-tracker.js"></script>
+  <script defer src="assets/js/mailto-rdv.js"></script>
 </body>
 </html>
